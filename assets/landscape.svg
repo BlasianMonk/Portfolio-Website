@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#101d2a"/><stop offset=".4" stop-color="#2d343d"/><stop offset=".75" stop-color="#70614e"/><stop offset="1" stop-color="#a27c53"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#e8b977" stop-opacity=".56"/><stop offset=".34" stop-color="#c9966a" stop-opacity=".19"/><stop offset="1" stop-color="#e8b977" stop-opacity="0"/></radialGradient>
+ <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d3a974" stop-opacity="0"/><stop offset="1" stop-color="#d8aa6d" stop-opacity=".3"/></linearGradient>
+ <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#192a25"/><stop offset="1" stop-color="#081310"/></linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<ellipse cx="1090" cy="344" rx="390" ry="330" fill="url(#halo)"/>
+<circle cx="1085" cy="318" r="51" fill="#e9c497" opacity=".52"/>
+<circle cx="1085" cy="318" r="64" fill="none" stroke="#e6ba80" opacity=".13"/>
+<g fill="#e6d0a3" opacity=".6"><circle cx="110" cy="109" r="1.4"/><circle cx="305" cy="162" r="1"/><circle cx="410" cy="77" r="1.2"/><circle cx="740" cy="97" r="1.3"/><circle cx="968" cy="130" r="1.4"/><circle cx="1340" cy="80" r="1.2"/><circle cx="1460" cy="166" r="1.7"/><circle cx="1228" cy="207" r="1"/><circle cx="500" cy="195" r="1.2"/></g>
+<!-- far jagged mountain range -->
+<path d="M0 485 90 395 132 429 270 268 370 432 443 365 537 462 645 340 724 407 804 268 872 358 951 292 1083 450 1200 280 1290 373 1410 265 1505 388 1600 320V900H0Z" fill="#26363c" opacity=".85"/>
+<path d="m221 319 49-51 46 88-43-18-19 25Zm553-15 30-36 50 83-43-21-13 19Zm394 13 32-37 31 62-30-13-13 16Z" fill="#b5b0a3" opacity=".18"/>
+<path d="M0 561 90 522 179 536 270 472 366 521 448 465 537 536 667 478 782 538 931 449 1032 510 1146 427 1250 498 1352 448 1498 529 1600 476V900H0Z" fill="#253b3a"/>
+<path d="M0 590q215-86 415-9 175-79 360 3 217-72 404-12 222-75 421-8v336H0" fill="url(#haze)"/>
+<!-- distant fortress -->
+<g fill="#152722" opacity=".95"><path d="M1188 534v-127h21v-30h27v30h16v-50h25v50h18v-28h21v28h18v127Z"/><path d="M1166 555v-82h17v-29h24v29h13v82ZM1319 552v-71h22v-38h20v38h16v71Z"/><path d="m1225 357 38-67 40 67ZM1176 446l19-42 17 42Zm153-2 21-49 16 49Z"/></g>
+<!-- birds -->
+<g fill="none" stroke="#1d2d2a" stroke-width="2.8" stroke-linecap="round" opacity=".7"><path d="M1121 220q11-9 21 1 8-10 18-3"/><path d="M1160 249q9-6 16 2 9-7 16-2"/><path d="M1089 246q8-6 15 2 8-5 15 2"/></g>
+<!-- rolling foreground -->
+<path d="M0 660Q165 602 330 654q169-62 319 14 174-91 342-12 186-74 332-20 153-33 277 9v255H0Z" fill="#18302b"/>
+<path d="M0 744Q190 681 340 740q180-63 330 5 148-77 315 0 202-80 366-19 126-35 249 7v167H0Z" fill="url(#ground)"/>
+<!-- foreground forest silhouettes -->
+<g fill="#10221e">
+<path d="M76 690 135 535 116 538 162 429 147 432 192 306 238 434 223 428 267 540 246 536 304 693Z"/>
+<path d="M144 750V465h96v285Z"/>
+<path d="M1380 723 1442 571 1427 577 1486 429 1472 432 1524 278 1580 433 1561 430 1600 538v211Z"/>
+<path d="M1475 760V420h95v340Z"/>
+<path d="M1360 696 1401 593 1387 593 1432 493 1478 601 1462 601 1508 704Z"/>
+<path d="M16 720 61 603 50 606 90 500 129 603 117 600 166 724Z"/>
+</g>
+<!-- branches framing -->
+<g fill="none" stroke="#0c1b18" stroke-linecap="round"><path d="M0 0q115 134 137 336" stroke-width="36"/><path d="M0 149q87 35 202 41M65 212q93-45 210-14M20 85q99-19 164-65" stroke-width="15"/><path d="M1600-10q-145 130-156 297" stroke-width="31"/><path d="M1550 102q-112 12-190-51M1517 187q-81-49-165-32" stroke-width="14"/></g>
+<g fill="#0b1a17" opacity=".97"><path d="M0 0 120 0 215 82 163 64 230 120 116 79 167 162 69 100 0 139Z"/><path d="M1600 0h-134l-79 83 91-41-51 85 92-63-50 120 131-81Z"/></g>
+<path d="M0 823q139-38 243-6 176-46 284 8 184-38 301 0 214-46 348 0 252-32 424-13v88H0Z" fill="#0a1715"/>
+<g stroke="#192d26" stroke-width="2" opacity=".68"><path d="m15 835 6-21 7 21m31 13 8-36 9 37m104 2 7-27 10 29m156-10 10-39 7 43m110 2 7-25 12 25m157 9 9-39 13 42m149 2 11-38 10 39m178 3 9-27 6 27m161-1 10-37 9 38m161 4 12-38 9 41m132-9 10-31 13 32"/></g>
+</svg>

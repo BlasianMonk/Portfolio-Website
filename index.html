@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#3b281b" />
+  <meta name="description" content="A handcrafted, fantasy guild-inspired portfolio for software engineering, game development, and systems projects." />
+  <title>Hunter's Codex — Developer Portfolio</title>
+  <link rel="icon" href="assets/crest.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="parchment.css" />
+  <script src="content.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="site-grain" aria-hidden="true"></div>
+  <div class="progress-track" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="Hunter's Codex, return to top">
+      <img src="assets/crest.svg" width="38" height="38" alt="" />
+      <span class="brand-wordmark" id="brand-name">HUNTER'S <span>CODEX</span><small>THE DEVELOPER'S GUILD</small></span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a href="#quests">Quests</a>
+      <a href="#hunter">Hunter</a>
+      <a href="#armory">Armory</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" class="effects-toggle" id="effects-toggle" aria-pressed="false" title="Toggle ambient effects">
+      <span class="effect-indicator" aria-hidden="true"></span>
+      <span id="effects-label">Ambience: On</span>
+    </button>
+    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+    <a href="#quests">Quest Board</a><a href="#hunter">Hunter's Notes</a><a href="#armory">The Armory</a><a href="#contact">Send a Raven</a>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="landscape" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="stars" aria-hidden="true"></div>
+      <div class="fireflies" id="fireflies" aria-hidden="true"></div>
+      <div class="hero-vertical hero-vertical-left" aria-hidden="true">EST. MMXXVI · THE DEVELOPER'S GUILD</div>
+      <div class="hero-vertical hero-vertical-right" aria-hidden="true">A WORLD BUILT ONE LINE AT A TIME</div>
+
+      <div class="hero-content">
+        <div class="crest-frame" aria-hidden="true"><img src="assets/crest.svg" alt="" /></div>
+        <p class="eyebrow hero-eyebrow"><span class="flourish"></span> WELCOME, TRAVELER <span class="flourish"></span></p>
+        <h1 id="hero-title"><span id="hero-line-one">A NEW QUEST</span><em id="hero-line-two">AWAITS.</em></h1>
+        <p class="hero-description" id="hero-intro">Building worlds, solving problems, and forging things that work.</p>
+        <div class="hero-menu" role="group" aria-label="Explore portfolio">
+          <a class="menu-choice menu-choice-primary" href="#quests"><span class="menu-number">01</span><span>ENTER THE QUEST BOARD</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+          <a class="menu-choice" href="#hunter"><span class="menu-number">02</span><span>VIEW HUNTER'S NOTES</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+          <a class="menu-choice" href="#contact"><span class="menu-number">03</span><span>CONTACT THE GUILD</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero-hint"><span class="hint-asterisk">✧</span> CHOOSE YOUR DESTINATION <span class="hint-asterisk">✧</span></p>
+      </div>
+      <a class="scroll-cue" href="#quests"><span>SCROLL TO EXPLORE</span><span class="scroll-line" aria-hidden="true"></span></a>
+      <div class="hero-coordinates" aria-hidden="true">GUILD OUTPOST // 001</div>
+    </section>
+
+    <div class="record-strip" aria-label="Portfolio overview">
+      <span><span class="record-icon">✦</span> GUILD ARCHIVE <strong>001</strong></span>
+      <span>CLASS <strong>DEVELOPER / CREATOR</strong></span>
+      <span>QUEST STATUS <strong><span class="live-dot"></span> OPEN TO ADVENTURE</strong></span>
+      <span class="record-end">SCROLL FOR FIELD NOTES <span>↓</span></span>
+    </div>
+
+    <section class="section quests-section" id="quests" aria-labelledby="quests-title">
+      <div class="section-head reveal">
+        <div><p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER I <span class="line-decoration"></span> THE GUILD HALL</p>
+          <h2 id="quests-title">The <em>Quest Board</em></h2>
+          <p class="section-intro">Every project is a new hunt. Browse the field reports, inspect the work, and see what I've been building.</p>
+        </div>
+        <div class="section-stamp" aria-hidden="true"><span>GUILD</span><strong>★</strong><span>APPROVED</span></div>
+      </div>
+      <div class="board-frame reveal">
+        <div class="board-heading"><span class="board-pin" aria-hidden="true"></span><span>AVAILABLE QUESTS</span><span class="board-heading-right" id="quest-count">04 POSTED</span><span class="board-pin" aria-hidden="true"></span></div>
+        <div class="quest-filters" role="group" aria-label="Filter projects">
+          <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All Quests <span>04</span></button>
+          <button type="button" class="filter-button" data-filter="development" aria-pressed="false">Code & Games</button>
+          <button type="button" class="filter-button" data-filter="systems" aria-pressed="false">Systems & Tools</button>
+          <button type="button" class="filter-button" data-filter="other" aria-pressed="false">Other</button>
+        </div>
+        <div class="quest-grid" id="quest-grid" aria-live="polite"></div>
+        <p class="board-footnote"><span>✧</span> SELECT A QUEST TO VIEW ITS FIELD REPORT <span>✧</span></p>
+      </div>
+    </section>
+
+    <section class="section hunter-section" id="hunter" aria-labelledby="hunter-title">
+      <div class="section-head reveal"><div>
+        <p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER II <span class="line-decoration"></span> THE ADVENTURER</p>
+        <h2 id="hunter-title">Hunter's <em>Notes</em></h2>
+        <p class="section-intro">A little about the person behind the keyboard.</p>
+      </div></div>
+      <div class="profile-layout">
+        <div class="profile-card reveal">
+          <div class="profile-topline"><span>GUILD IDENTIFICATION</span><span>NO. 001</span></div>
+          <div class="profile-emblem" aria-hidden="true"><div class="profile-ring"><img src="assets/crest.svg" alt="" /></div></div>
+          <span class="profile-label">NAME OF HUNTER</span>
+          <h3 id="profile-name">Your Name</h3>
+          <span class="profile-role" id="profile-role">Developer · Builder · Explorer</span>
+          <div class="profile-divider"><span>✥</span></div>
+          <dl class="profile-details">
+            <div><dt>Guild</dt><dd id="profile-guild">Independent Developer</dd></div>
+            <div><dt>Current Quest</dt><dd id="profile-education">B.S. Computer Science · WGU</dd></div>
+            <div><dt>Specialty</dt><dd id="profile-specialty">Code, Games & Infrastructure</dd></div>
+            <div><dt>Status</dt><dd><span class="live-dot dark"></span> <span id="profile-status">Always Learning</span></dd></div>
+          </dl>
+          <span class="profile-corner profile-corner-tl"></span><span class="profile-corner profile-corner-tr"></span><span class="profile-corner profile-corner-bl"></span><span class="profile-corner profile-corner-br"></span>
+        </div>
+        <div class="hunter-copy reveal">
+          <p class="small-label">FIELD RECORD // ABOUT ME</p>
+          <h3><span id="about-line-one">Curiosity is my</span><br/><em id="about-line-two">favorite weapon.</em></h3>
+          <p id="about-one">I enjoy the space where software, systems, and creativity meet.</p>
+          <p id="about-two">I’m currently pursuing a B.S. in Computer Science.</p>
+          <div class="hunter-highlights" id="hunter-highlights"></div>
+          <a href="#armory" class="text-link">INSPECT MY TOOLKIT <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section armory-section" id="armory" aria-labelledby="armory-title">
+      <div class="section-head reveal"><div>
+        <p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER III <span class="line-decoration"></span> EQUIPPED & READY</p>
+        <h2 id="armory-title">The <em>Armory</em></h2>
+        <p class="section-intro">The tools, languages, and systems I carry into every new adventure.</p>
+      </div></div>
+      <div class="armory-grid" id="armory-grid"></div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-decoration" aria-hidden="true">✥</div>
+      <div class="contact-inner reveal"><p class="eyebrow"><span class="flourish"></span> FINAL CHAPTER <span class="flourish"></span></p><h2 id="contact-title">The next quest<br/>starts <em>with a message.</em></h2><p id="contact-intro">Have a role, project, or idea worth exploring? The guild hall is open.</p>
+        <div class="contact-actions"><a href="#contact" class="contact-primary" id="email-link">SEND A RAVEN <span aria-hidden="true">↗</span></a><a class="contact-secondary" id="linkedin-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a></div>
+        <p class="contact-help" id="contact-help">Contact details can be edited in <a href="editor.html">the Portfolio Editor</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span><img src="assets/crest.svg" width="25" height="25" alt="" /> <span id="footer-site-name">HUNTER'S CODEX</span></span><span>HANDCRAFTED WITH CODE & CURIOSITY <span aria-hidden="true">✦</span> <span id="copyright-year">2026</span></span><a href="#home">RETURN TO CAMP ↑</a></footer>
+
+  <dialog class="quest-modal" id="quest-modal" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close quest details">✕</button>
+    <div class="modal-topline">GUILD FIELD REPORT <span id="dialog-index">NO. 001</span></div>
+    <div class="modal-icon" id="dialog-symbol" aria-hidden="true">✦</div>
+    <p class="eyebrow copper" id="dialog-category">QUEST DETAILS</p>
+    <h2 id="dialog-title">Quest Title</h2>
+    <p id="dialog-description">Quest description.</p>
+    <h3>TOOLS & EQUIPMENT</h3><div class="modal-tags" id="dialog-tags"></div>
+    <div class="modal-action" id="dialog-action"></div>
+    <p class="modal-caption">✥ FIELD REPORT COMPLETE ✥</p>
+  </dialog>
+</body>
+</html>
