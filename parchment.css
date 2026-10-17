@@ -324,3 +324,19 @@ body {
 
 /* A readable warning instead of a blank page when content.js fails to load. */
 .content-warning{position:relative;z-index:200;background:#f5e3bd;color:#4e2c20;border-bottom:3px solid #8e4734;padding:14px 22px;text-align:center;font:600 14px/1.5 Georgia,serif;}
+
+/* EDITABLE TITLE-SCREEN HEADINGS
+   Long lines from editor.html must stay inside the parchment frame.
+   JavaScript gently scales both lines together when they can fit on one line;
+   this CSS is the fallback and allows very long text to wrap safely. */
+.hero-content { min-width: 0; }
+.hero h1 { width: 100%; min-width: 0; max-width: 100%; padding-inline: 4px; }
+.hero h1 > span,
+.hero h1 > em {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}

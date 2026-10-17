@@ -187,6 +187,54 @@ function configureIdentity() {
   }
 }
 
+/* Fit editor-customized title lines to the inner parchment width.
+   Both lines receive the same size to keep the old-world title balanced.
+   When a very long heading cannot fit legibly, it wraps instead. */
+function fitHeroHeadline() {
+  const heading = $('#hero-title');
+  if (!heading) return;
+  const lines = [$('#hero-line-one'), $('#hero-line-two')].filter(Boolean);
+  const availableWidth = heading.clientWidth - 8; // A little breathing room by the ink border.
+  if (availableWidth <= 0) return;
+
+  // Reset previous calculations before reading the responsive stylesheet.
+  lines.forEach(line => { line.style.fontSize = ''; line.style.whiteSpace = 'nowrap'; });
+  const baseSize = parseFloat(getComputedStyle(heading).fontSize);
+  if (!Number.isFinite(baseSize)) return;
+  const fits = () => lines.every(line => line.scrollWidth <= availableWidth);
+  if (fits()) return;
+
+  const minimum = Math.min(baseSize, window.innerWidth <= 680 ? 33 : 36);
+  const setSize = size => lines.forEach(line => { line.style.fontSize = `${size}px`; });
+  setSize(minimum);
+  if (!fits()) {
+    // Small screens and especially long edits should wrap, not overflow.
+    lines.forEach(line => { line.style.whiteSpace = 'normal'; });
+    return;
+  }
+
+  let low = minimum;
+  let high = baseSize;
+  for (let i = 0; i < 11; i++) {
+    const middle = (low + high) / 2;
+    setSize(middle);
+    if (fits()) low = middle; else high = middle;
+  }
+  setSize(Math.max(minimum, Math.floor(low - 1)));
+}
+
+function setupHeroHeadlineSizing() {
+  let pendingFrame = 0;
+  const refresh = () => {
+    if (pendingFrame) cancelAnimationFrame(pendingFrame);
+    pendingFrame = requestAnimationFrame(() => { pendingFrame = 0; fitHeroHeadline(); });
+  };
+  fitHeroHeadline();
+  window.addEventListener('resize', refresh, { passive: true });
+  // Web fonts may arrive after JavaScript has calculated initial text widths.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh).catch(() => {});
+}
+
 function makeFireflies() {
   const container = $('#fireflies');
   const places = [[7,62],[13,77],[18,46],[25,70],[35,79],[42,59],[52,84],[62,73],[71,55],[79,79],[88,61],[94,74],[23,29],[81,33],[61,18]];
@@ -271,6 +319,7 @@ function initialize() {
     document.body.prepend(warning);
   }
   configureIdentity();
+  setupHeroHeadlineSizing();
   renderProjects();
   makeFireflies();
   setupEffects();
