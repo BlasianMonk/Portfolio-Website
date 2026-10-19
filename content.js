@@ -1,4 +1,4 @@
-/* Edit with Guild Scribe (editor.html). */
+/* Edited with Guild Scribe. Open editor.html to change this content. */
 window.SITE_CONTENT = {
   "siteTitle": "Hunter's Codex",
   "name": "Dante Sin",
@@ -97,7 +97,8 @@ window.SITE_CONTENT = {
         "Networking",
         "LLM"
       ],
-      "link": ""
+      "link": "",
+      "questState": "available"
     },
     {
       "id": "grappling-hook",
@@ -116,7 +117,8 @@ window.SITE_CONTENT = {
         "C#",
         "Gameplay Systems"
       ],
-      "link": ""
+      "link": "",
+      "questState": "available"
     },
     {
       "id": "portfolio",
@@ -136,14 +138,15 @@ window.SITE_CONTENT = {
         "JavaScript",
         "Responsive UI"
       ],
-      "link": ""
+      "link": "",
+      "questState": "available"
     },
     {
       "id": "workflow",
       "title": "Development Guild Workflow",
       "type": "systems",
       "category": "DEV TOOLS / COLLABORATION",
-      "rank": "HR 02",
+      "rank": "",
       "status": "FIELD PRACTICE",
       "art": "team",
       "symbol": "⌘",
@@ -156,7 +159,8 @@ window.SITE_CONTENT = {
         "Confluence",
         "Trello"
       ],
-      "link": ""
+      "link": "",
+      "questState": "completed"
     }
   ]
 };
