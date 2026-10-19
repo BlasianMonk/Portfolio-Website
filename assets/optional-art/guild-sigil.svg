@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-label="Fantasy guild sigil with quill, spear and open book">
-<defs><radialGradient id="ink"><stop stop-color="#815239"/><stop offset="1" stop-color="#2b1b13"/></radialGradient></defs>
-<rect width="420" height="420" fill="#d9bb89"/><circle cx="210" cy="210" r="186" fill="url(#ink)" stroke="#b78e55" stroke-width="12"/><circle cx="210" cy="210" r="163" fill="none" stroke="#ddbb81" stroke-width="4" stroke-dasharray="5 14"/>
-<path d="M111 278 210 313l99-35V153l-99 31-99-31z" fill="#e2c99b" stroke="#e5d1a7" stroke-width="7"/><path d="M210 184v128M135 181l58 20m-58 8 58 18m34-26 59-20m-59 46 59-18" fill="none" stroke="#805535" stroke-width="5"/>
-<g stroke="#e9d5a6" stroke-width="10" stroke-linecap="round"><path d="M124 107 290 286M292 103 125 286"/></g><path d="m124 107-6-32 31 5M292 103l8-28-31 5" fill="#ead4a5"/><circle cx="210" cy="178" r="31" fill="#81442d" stroke="#f2dca7" stroke-width="7"/><path d="m210 153 8 16 17 8-17 8-8 18-9-18-17-8 17-8z" fill="#ebc48d"/>
-<path d="M78 330q132 89 264 0" stroke="#e1be7f" stroke-width="7" fill="none"/><text x="210" y="365" text-anchor="middle" font-size="24" font-family="Georgia,serif" letter-spacing="3" fill="#f5ddb1">THE GUILD</text>
-</svg>
