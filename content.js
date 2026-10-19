@@ -1,6 +1,6 @@
 /* Edited with Neon Studio. Open editor.html to change this content. */
 window.SITE_CONTENT = {
-  "siteTitle": "NEON // ARCHIVE",
+  "siteTitle": "DANTE'S // ARCHIVE",
   "name": "Dante Sin",
   "role": "Developer · Builder · Explorer",
   "heroLineOne": "BUILDING DIGITAL",
