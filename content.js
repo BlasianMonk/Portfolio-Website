@@ -128,7 +128,7 @@ window.SITE_CONTENT = {
       "art": "web",
       "symbol": "✦",
       "image": "",
-      "summary": "This website: a DnD-inspired interactive portfolio built with vanilla web technologies.",
+      "summary": "This website: a Journal-inspired interactive portfolio built with vanilla web technologies.",
       "details": "A responsive portfolio inspired by fantasy guild interfaces and game title screens, built using HTML, CSS, JavaScript, category filtering, accessible quest-detail dialogs, optional effects, and a beginner-friendly editor. The entire project works without a frontend framework.",
       "tools": [
         "HTML",
