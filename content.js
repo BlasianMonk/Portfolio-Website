@@ -122,7 +122,7 @@ window.SITE_CONTENT = {
     },
     {
       "id": "portfolio",
-      "title": "Hunter's Codex Portfolio",
+      "title": "Portfolio Website",
       "type": "development",
       "category": "FRONTEND / WEB DEVELOPMENT",
       "rank": "",
@@ -138,7 +138,7 @@ window.SITE_CONTENT = {
         "JavaScript",
         "Responsive UI"
       ],
-      "link": "",
+      "link": "https://github.com/BlasianMonk/Portfolio-Website",
       "questState": "available"
     },
     {
@@ -164,5 +164,6 @@ window.SITE_CONTENT = {
     }
   ],
   "accentColor": "#fa4ba9",
-  "secondaryColor": "#4de3e9"
+  "secondaryColor": "#4de3e9",
+  "matrixIntroDuration": "3000"
 };
