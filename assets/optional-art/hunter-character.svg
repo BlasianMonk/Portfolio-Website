@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" role="img" aria-labelledby="title desc">
+<title id="title">The wandering archivist</title><desc id="desc">An original fantasy hunter portrait in brown ink and parchment, wearing an ornate hood, cloak and carrying a quill and scroll.</desc>
+<defs><radialGradient id="paper"><stop stop-color="#f4e7c7"/><stop offset="1" stop-color="#cfac79"/></radialGradient><linearGradient id="cloak" x2=".85" y2="1"><stop stop-color="#8c5b3f"/><stop offset="1" stop-color="#39291f"/></linearGradient><pattern id="hach" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M-3 10 10 -3 M5 13 13 5" stroke="#60412d" opacity=".16"/></pattern></defs>
+<rect width="480" height="600" fill="url(#paper)"/>
+<rect x="19" y="19" width="442" height="562" rx="155" fill="none" stroke="#7d583a" stroke-width="5"/><rect x="31" y="31" width="418" height="538" rx="146" fill="none" stroke="#a17b51" stroke-dasharray="4 8" stroke-width="2"/>
+<circle cx="240" cy="213" r="142" fill="none" stroke="#a88759" opacity=".55" stroke-width="2"/><circle cx="240" cy="213" r="111" fill="none" stroke="#a88759" opacity=".65" stroke-dasharray="5 8"/>
+<g stroke="#65442e" stroke-width="5" fill="none" opacity=".7"><path d="M74 486Q33 397 80 314M406 486q41-89-6-172"/><path d="M83 338q-12-30-38-38M77 367q-24-20-38-14M394 338q12-30 38-38M403 367q24-20 38-14"/></g>
+<path d="M56 538q23-143 111-173 28-13 44-44h57q20 31 46 44 90 30 110 173z" fill="url(#cloak)" stroke="#39291f" stroke-width="7"/>
+<path d="M97 527q23-107 89-143L231 568H73zM382 527q-23-107-89-143L249 568h157z" fill="#694632" stroke="#412c21" stroke-width="5"/>
+<path d="M239 78c-94 18-113 100-114 177-5 74 39 128 83 147 49 17 99-7 131-66 38-74 12-214-100-258z" fill="#3c2b21" stroke="#2e2119" stroke-width="9"/>
+<path d="M157 237q-5-83 83-107c80 24 85 80 76 125l-18 45q-7 57-58 62-51-5-62-62z" fill="#b18a62" stroke="#503827" stroke-width="5"/>
+<path d="M159 242q17-87 81-105 61 18 81 105l16-35Q331 111 240 77 139 106 141 214z" fill="#453022" stroke="#2a211a" stroke-width="7"/>
+<path d="M159 235q-42-26-44 10-2 32 34 48l8-49M321 235q42-26 44 10 2 32-34 48l-8-49" fill="#4a3325" stroke="#3a281e" stroke-width="5"/>
+<g fill="none" stroke="#4e3425" stroke-linecap="round"><path d="M193 256q16-9 33-1m30 0q17-9 34 1" stroke-width="6"/><path d="M211 268l10 0m50 0h10" stroke-width="4"/><path d="M242 268l-11 30q11 7 22 0" stroke-width="4"/><path d="M217 326q25 12 47 0" stroke-width="4"/></g>
+<path d="M160 241q-22-52-4-99 26-56 84-67 70 17 87 77 10 41-9 89-16-39-28-70-25 15-53 23-44 13-77 47z" fill="#4e3526" stroke="#292017" stroke-width="7"/>
+<path d="M160 163q72-89 155 4M161 191q73-78 150-5" fill="none" stroke="#aa8158" stroke-width="5" opacity=".65"/>
+<path d="M151 206q22-41 45-50M327 206q-21-41-45-50" fill="none" stroke="#c7a477" stroke-width="4"/>
+<path d="M206 366q34 31 68 0l40 22-74 149-74-149z" fill="#d3b183" stroke="#4d3523" stroke-width="5"/><path d="M190 373 240 540 290 373" stroke="#65422b" stroke-width="4" fill="none"/><path d="M171 380 240 552 308 380" stroke="#d5ae70" stroke-width="6" fill="none"/>
+<circle cx="239" cy="469" r="21" fill="#5f3a27" stroke="#ebd8a5" stroke-width="6"/><path d="m239 457 5 9 10 3-8 8-3 12-7-9-12-1 9-9z" fill="#d7ae73"/>
+<path d="M330 413q45-21 75-2l-22 88-77-8z" fill="#e7d7b5" stroke="#593d2b" stroke-width="5"/><path d="M330 438q18-9 46-4m-40 18 35-4m-30 19 24-5" stroke="#8b6545" stroke-width="3"/><path d="M356 397q46-81 31-149-40 46-49 147z" fill="#866341" stroke="#4b3625" stroke-width="4"/><path d="M342 397q30-84 45-149" stroke="#f1e1b8" stroke-width="3"/>
+<rect width="480" height="600" fill="url(#hach)" opacity=".5"/><path d="M55 565h370" stroke="#7a563b" stroke-width="3"/><text x="240" y="583" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#6d4e31" letter-spacing="5">THE WAYFARER</text>
+</svg>

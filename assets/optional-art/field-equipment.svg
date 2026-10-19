@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-label="Old world field equipment illustration with compass, parchment scroll, quill and pouch">
+<defs><linearGradient id="p" x2="1" y2="1"><stop stop-color="#f5e6c0"/><stop offset="1" stop-color="#bd9160"/></linearGradient></defs>
+<rect width="1100" height="430" fill="url(#p)"/><rect x="26" y="25" width="1048" height="380" fill="none" stroke="#865b36" stroke-width="5"/><path d="M70 110h960M70 320h960" stroke="#b99867" stroke-dasharray="6 15"/>
+<g transform="translate(229 212)" fill="none" stroke="#69492e"><circle r="134" stroke-width="9"/><circle r="115" stroke-width="2" stroke-dasharray="4 9"/><circle r="91" stroke-width="4"/><path d="M0-133v266M-133 0h266" stroke-width="2"/><path d="M0-93 18 0 0 93-18 0Z" fill="#70432a" stroke-width="4"/><path d="M-93 0 0 18 93 0 0-18Z" fill="#d3ae76" stroke-width="4"/></g>
+<g stroke="#5c3e29" stroke-width="6"><rect x="435" y="135" width="250" height="150" rx="15" fill="#e5d0a1"/><path d="M459 148h200M459 271h200" stroke="#b28a59"/><path d="M489 178h144M489 205h124M489 233h154" stroke="#856144" stroke-width="3"/></g>
+<g stroke="#6b452e" stroke-width="5"><path d="M805 307q-44-100 11-235 47 72 38 127-5 74-49 108Z" fill="#866445"/><path d="M805 307q-4-137 17-219" fill="none" stroke="#f0d7ac" stroke-width="4"/><path d="m802 307-22 44"/></g>
+<path d="M922 280h87v76h-87z" fill="#845735" stroke="#5b3c28" stroke-width="5"/><path d="m912 286 55-75 53 75" fill="#aa794b" stroke="#5b3c28" stroke-width="5"/><circle cx="966" cy="305" r="14" fill="#dfbc7e" stroke="#68432b" stroke-width="5"/>
+<text x="551" y="91" font-family="Georgia,serif" font-size="27" letter-spacing="6" text-anchor="middle" fill="#65472f">TOOLS OF THE WAYFARER</text>
+</svg>

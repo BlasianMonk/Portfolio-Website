@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+<title id="t">The Cartographers Guild</title><desc id="d">An old-world stone guild hall, towers, banners, lanterns and timber roofs in sepia pen-and-ink style.</desc>
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d5b585"/><stop offset="1" stop-color="#f1ddae"/></linearGradient><pattern id="p" width="21" height="21" patternUnits="userSpaceOnUse"><path d="M21 0H0v21" stroke="#845f3e" stroke-width="1" opacity=".17"/></pattern></defs>
+<rect width="1200" height="560" fill="url(#sky)"/>
+<circle cx="924" cy="133" r="90" fill="#eddbb6" stroke="#a98250" stroke-width="4"/>
+<path d="M0 368 121 280 200 342 340 236 475 343 605 247 762 350 917 282 1032 352 1200 265v295H0z" fill="#a98b63" opacity=".44"/>
+<path d="M0 403 175 359 376 390 553 352 720 391 950 338 1200 386v174H0z" fill="#8a6a49" opacity=".56"/>
+<g stroke="#493525" stroke-linejoin="round" stroke-width="6">
+ <path d="M270 430V210l114-87h436l119 87v220z" fill="#b18a5f"/>
+ <path d="M235 228 380 98h447l148 130-54 9-109-105H392L290 233z" fill="#5d402c"/>
+ <rect x="202" y="195" width="108" height="240" fill="#98724d"/><rect x="890" y="195" width="108" height="240" fill="#98724d"/>
+ <path d="m193 204 62-103 64 103zM881 204l63-103 63 103z" fill="#603d29"/>
+ <path d="M226 107V69h58v38M919 107V69h52v38" fill="#8b5b37"/>
+ <path d="M413 426V319q0-88 90-88t90 88v107z" fill="#4f3426"/>
+ <path d="M630 426V319q0-88 90-88t90 88v107z" fill="#4f3426"/>
+ <rect x="526" y="169" width="145" height="61" fill="#6a4530"/>
+ <path d="M598 151v111M558 206h81" stroke="#d6b47c" stroke-width="7"/>
+</g>
+<g fill="#e7cf9a" stroke="#493525" stroke-width="5"><path d="M449 420v-95q0-47 54-47t54 47v95z"/><path d="M662 420v-95q0-47 54-47t54 47v95z"/></g>
+<g fill="#64452f" stroke="#bca074" stroke-width="3"><path d="M368 160h58v100h-58zM781 160h58v100h-58z"/><path d="M233 244h47v89h-47zM921 244h48v89h-48z"/></g>
+<g fill="#76482d" stroke="#e5c38e" stroke-width="4"><path d="M365 118v115l29 22 27-22V118zM787 118v115l27 22 28-22V118z"/></g>
+<g stroke="#e9d6b3" stroke-width="4" fill="none"><path d="M395 129v91m-16-56h32M813 129v91m-16-56h32"/><path d="M478 289v121m57-121v121M691 289v121m58-121v121"/></g>
+<path d="M0 454h1200v106H0z" fill="#674a33"/><path d="M0 481q200-40 400-12t400 0 400 9" fill="none" stroke="#b89769" stroke-width="6"/>
+<path d="M525 560 584 446h38l59 114z" fill="#a88051" stroke="#513726" stroke-width="5"/>
+<g fill="#4c3324" stroke="#d9b37b" stroke-width="3"><path d="M102 451h20v60h-20zM1090 451h20v60h-20z"/><circle cx="111" cy="433" r="17" fill="#e4bc7b"/><circle cx="1101" cy="433" r="17" fill="#e4bc7b"/></g>
+<rect width="1200" height="560" fill="url(#p)" opacity=".7"/>
+<g stroke="#7a5538" stroke-width="3" fill="none" opacity=".6"><path d="M28 31h1144v498H28z"/><path d="M43 46h1114v468H43z"/></g>
+<text x="600" y="514" font-size="27" text-anchor="middle" fill="#ead3a8" font-family="Georgia,serif" letter-spacing="7">THE GUILD HALL</text>
+</svg>

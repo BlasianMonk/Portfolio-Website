@@ -1,4 +1,4 @@
-/* Edited with Guild Scribe. Open editor.html to change this content. */
+/* Edit with Guild Scribe (editor.html). */
 window.SITE_CONTENT = {
   "siteTitle": "Hunter's Codex",
   "name": "Dante Sin",
@@ -12,8 +12,8 @@ window.SITE_CONTENT = {
   "status": "Always Learning",
   "aboutLineOne": "Curiosity is my",
   "aboutLineTwo": "favorite weapon.",
-  "aboutOne": "I enjoy the space where software, systems, and creativity meet. Whether I'm tinkering with game mechanics, coding, or keeping a home server alive, I'm happiest when I'm learning by building.",
-  "aboutTwo": "I'm currently pursuing a B.S. in Computer Science at Western Governors University and continuing to sharpen my skills through hands-on projects.",
+  "aboutOne": "I enjoy the meeting point of software, systems, and creativity. From experimenting with game mechanics to building web interfaces and maintaining home services, I learn best by making things and improving them.",
+  "aboutTwo": "I'm pursuing a B.S. in Computer Science at Western Governors University while continuing to develop my skills through practical, self-directed projects.",
   "highlights": [
     {
       "symbol": "◇",
@@ -87,8 +87,8 @@ window.SITE_CONTENT = {
       "art": "server",
       "symbol": "▤",
       "image": "",
-      "summary": "A hands-on homelab for storage, containerized services, game servers, and LLM's.",
-      "details": "A personal, evolving environment for learning practical systems administration. The setup includes Proxmox, Debian-based network-attached storage, Docker containers, Jellyfin, self-hosted game servers and LLM's. This entry can grow into an architecture walkthrough with diagrams, screenshots, and lessons learned.",
+      "summary": "A personal homelab for storage, containerized services, game servers, and local LLM experimentation.",
+      "details": "An evolving, hands-on environment for learning systems administration. My projects include Proxmox, Debian-based NAS storage, Docker containers, Jellyfin, self-hosted game servers, and LLM experimentation. I use the homelab to practice deployment, troubleshooting, and maintaining services.",
       "tools": [
         "Proxmox",
         "Debian",
@@ -128,8 +128,8 @@ window.SITE_CONTENT = {
       "art": "web",
       "symbol": "✦",
       "image": "",
-      "summary": "This website: a Journal-inspired interactive portfolio built with vanilla web technologies.",
-      "details": "A responsive portfolio inspired by fantasy guild interfaces and game title screens, built using HTML, CSS, JavaScript, category filtering, accessible quest-detail dialogs, optional effects, and a beginner-friendly editor. The entire project works without a frontend framework.",
+      "summary": "This website: an interactive fantasy field journal built with plain HTML, CSS, and JavaScript.",
+      "details": "A responsive developer portfolio styled as an explorer's journal. It includes a book-opening introduction, paginated quest archive, animated field reports, an inspectable toolbox, and a browser-based content editor. A separate optional vector-art pack supports character, guild, and cartography illustrations without requiring a framework.",
       "tools": [
         "HTML",
         "CSS",
@@ -148,8 +148,8 @@ window.SITE_CONTENT = {
       "art": "team",
       "symbol": "⌘",
       "image": "",
-      "summary": "Organizing code, tasks, knowledge, and team handoffs with integrated development tools.",
-      "details": "Experience working with Bitbucket and its connections to Jira, Confluence, and Trello for source control, task tracking, documentation, and planning. ",
+      "summary": "Organizing code, tasks, documentation, and handoffs with integrated development tools.",
+      "details": "Experience using Bitbucket alongside Jira, Confluence, and Trello for source control, task tracking, documentation, and planning.",
       "tools": [
         "Bitbucket",
         "Jira",

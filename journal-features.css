@@ -1,0 +1,135 @@
+/* Hunter's Codex — interactive book and optional artwork slots.
+   This is code/styling only. The character/guild/map art lives in a separate preview pack. */
+[hidden]{display:none!important}
+body.intro-locked{overflow:hidden}
+.book-intro{position:fixed;inset:0;z-index:600;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 40%,#674d36,#23160f 72%);color:#e8d4aa;padding:24px;isolation:isolate}
+.book-intro::before{content:"";position:absolute;inset:0;opacity:.2;pointer-events:none;background:repeating-linear-gradient(30deg,transparent 0 7px,#e4bd7930 8px 9px)}
+.intro-stage{position:relative;display:grid;grid-template-columns:minmax(190px,.95fr) minmax(270px,1fr);align-items:center;gap:clamp(26px,5vw,100px);width:min(1040px,100%)}
+.intro-book{height:440px;position:relative;perspective:1600px;filter:drop-shadow(20px 30px 18px #0c0707aa)}
+.intro-book-back,.intro-book-pages,.intro-book-cover{position:absolute;inset:0;border-radius:6px 17px 17px 6px}
+.intro-book-back{background:#4f321e;border:10px ridge #9c7144;transform:translate(8px,12px)}
+.intro-book-pages{inset:7px 7px 7px 20px;background:repeating-linear-gradient(180deg,#e8d7af 0 3px,#caae7c 4px 5px);border:5px solid #e6ce9f;box-shadow:inset -6px 0 10px #8f6647}
+.intro-book-cover{transform-origin:left center;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:17px;background:radial-gradient(circle at 65% 35%,#815034,#3c2419 68%);border:15px ridge #b08a58;outline:3px double #e1be7a;outline-offset:-32px;box-shadow:inset 0 0 0 8px #4a2c1c,inset 0 0 50px #24130dc7;transition:transform 1s cubic-bezier(.15,.86,.35,1)}
+.intro-cover-seal{width:102px;height:102px;display:grid;place-items:center;border:4px double #d6ac6f;border-radius:50%;font:48px Georgia,serif;color:#f1d39a;background:radial-gradient(circle,#9a5436,#5a2e1e)}
+.intro-cover-rule{width:70%;height:1px;background:#bc955c}
+.intro-book-cover span{max-width:290px;color:#f4dcad;font:700 clamp(21px,3vw,32px)/1.2 var(--heading);letter-spacing:.07em}
+.intro-book-cover small{font:700 11px/1.3 var(--heading);letter-spacing:.18em;color:#d8b989}
+.intro-cover-mark{font:28px Georgia,serif;color:#c6a16b}
+.intro-commands h2{margin:15px 0 32px;color:#f3dfb5;font:700 clamp(29px,3.5vw,46px)/1.25 var(--heading)}
+.intro-kicker{font:700 11px var(--heading);letter-spacing:.22em;color:#d7a96e}
+.intro-open{width:100%;max-width:350px;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:19px 21px;background:#e8d0a0;border:3px double #b78550;color:#43281b;font:700 12px var(--heading);letter-spacing:.12em;cursor:pointer}
+.intro-open:hover{background:#f8e7c7}
+.intro-skip{display:block;margin:19px 0 0;padding:6px 0;border:0;border-bottom:1px dashed #b99a6e;color:#ead5b1;background:transparent;font:13px var(--heading);cursor:pointer}
+.book-intro.is-opening .intro-book-cover{transform:rotateY(-150deg)}
+.book-intro.is-opening .intro-commands{opacity:0;transform:translateY(14px);transition:opacity .4s,transform .4s}
+.book-intro.is-opening{animation:intro-away 1s ease forwards}
+@keyframes intro-away{0%,72%{opacity:1}100%{opacity:0;visibility:hidden}}
+
+.quest-pagination{display:flex;align-items:center;justify-content:center;gap:22px;padding:18px 10px 20px;color:#4a301e;border-top:2px double #b38d60;background:#d6be92}
+.quest-pagination button,.journal-leaf-nav button{padding:10px 12px;background:#6d3b2a;border:1px solid #6c3725;color:#f9e9ca;font:700 10px var(--heading);letter-spacing:.12em;cursor:pointer}
+.quest-pagination button:hover:not(:disabled),.journal-leaf-nav button:hover:not(:disabled){background:#8b5038}
+.quest-pagination button:disabled,.journal-leaf-nav button:disabled{opacity:.35;cursor:not-allowed}
+.quest-page-label,.journal-leaf-nav span{font:700 12px var(--heading);letter-spacing:.17em;white-space:nowrap}
+.quest-grid.folio-turn-forward{animation:archive-turn-forward .48s ease-in-out}
+.quest-grid.folio-turn-backward{animation:archive-turn-backward .48s ease-in-out}
+@keyframes archive-turn-forward{0%,100%{opacity:1;transform:perspective(800px) rotateY(0)}48%{opacity:.18;transform:perspective(800px) rotateY(-10deg)}}
+@keyframes archive-turn-backward{0%,100%{opacity:1;transform:perspective(800px) rotateY(0)}48%{opacity:.18;transform:perspective(800px) rotateY(10deg)}}
+
+.journal-modal{max-height:min(93svh,920px);overflow-y:auto}
+.journal-shell{min-width:0}
+.journal-spread{isolation:isolate}
+.journal-turn-leaf{position:absolute;left:50%;top:0;bottom:0;width:50%;z-index:7;background:linear-gradient(90deg,#ccaf7f,#f3e4c1 18%,#e7cea0 90%);box-shadow:inset 12px 0 24px #714c2940;transform-origin:left center;opacity:0;pointer-events:none}
+.journal-modal.page-turn-next .journal-turn-leaf{opacity:1;animation:leaf-forward .64s ease-in-out forwards}
+.journal-modal.page-turn-prev .journal-turn-leaf{left:0;transform-origin:right center;opacity:1;animation:leaf-backward .64s ease-in-out forwards}
+@keyframes leaf-forward{0%{transform:perspective(1400px) rotateY(0)}49%{transform:perspective(1400px) rotateY(-87deg)}100%{transform:perspective(1400px) rotateY(-179deg);opacity:0}}
+@keyframes leaf-backward{0%{transform:perspective(1400px) rotateY(0)}49%{transform:perspective(1400px) rotateY(87deg)}100%{transform:perspective(1400px) rotateY(179deg);opacity:0}}
+.journal-leaf-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#342217;color:#e9d5ad;padding:18px 20px 2px;border-top:3px double #9f7647}
+.journal-page-inner{overflow-wrap:anywhere}
+
+/* Artwork slots: blank in the default installation, filled by the optional art pack or editor uploads. */
+.guild-illustration,.cartographer-inset{display:none;position:relative;overflow:hidden;margin:30px auto 0;max-width:940px;background:#d7bd91;border:8px double #947248;box-shadow:0 10px 22px #53371b4d}
+.guild-illustration{min-height:225px}
+.cartographer-inset{min-height:250px;margin:10px 22px 26px}
+.guild-illustration.has-custom-art,.cartographer-inset.has-custom-art{display:block}
+.guild-illustration img,.cartographer-inset img{width:100%;height:260px;object-fit:cover;display:block}
+.guild-illustration img[hidden],.cartographer-inset img[hidden]{display:none}
+.profile-ring.has-custom-art .profile-default-crest{display:none}
+.profile-ring.has-custom-art #profile-portrait{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
+.profile-ring #profile-portrait[hidden]{display:none}
+
+/* Artwork editing section */
+.site-artwork-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.artwork-editor{padding:18px;background:#edd7ab;border:1px solid #ad8c5d;min-width:0}
+.artwork-editor h3{font:700 14px var(--heading);margin:0 0 16px;color:#6a3b29}
+.artwork-editor label{min-width:0;overflow-wrap:anywhere}
+.artwork-editor input{font-size:13px}
+.art-preview{min-height:165px;margin:14px 0;background:#d9bd8e;display:grid;place-items:center;overflow:hidden;border:2px double #967449}
+.art-preview img{width:100%;height:165px;object-fit:cover}
+.art-preview span{padding:20px;text-align:center;font:14px Georgia,serif;color:#624832}
+.artwork-editor .image-editor-actions{display:flex;flex-wrap:wrap;gap:8px}
+.artwork-editor .secondary-action,.artwork-editor .small-action{padding:10px 12px;font-size:10px;cursor:pointer}
+
+@media(max-width:900px){
+  .intro-stage{grid-template-columns:1fr;justify-items:center;gap:16px;padding-block:20px}
+  .intro-book{width:min(300px,78vw);height:320px}
+  .intro-book-cover{gap:8px}
+  .intro-book-cover span{font-size:22px}
+  .intro-book-cover small{font-size:8px}
+  .intro-cover-seal{width:72px;height:72px;font-size:34px}
+  .intro-commands{text-align:center}
+  .intro-commands h2{margin:8px 0 16px;font-size:27px}
+  .intro-open{margin:0 auto}
+  .intro-skip{margin:12px auto 0}
+  .site-artwork-grid{grid-template-columns:1fr 1fr}
+  .journal-leaf-nav{padding:14px 10px 2px}
+}
+@media(max-width:600px){
+  .site-artwork-grid{grid-template-columns:1fr}
+  .quest-pagination,.journal-leaf-nav{gap:7px}
+  .quest-pagination button,.journal-leaf-nav button{font-size:8px;letter-spacing:0;padding:10px 8px}
+  .quest-page-label,.journal-leaf-nav span{font-size:9px;letter-spacing:0}
+  .journal-turn-leaf{display:none}
+  .journal-modal.page-turn-next .journal-spread,.journal-modal.page-turn-prev .journal-spread{animation:leaf-fade .62s ease}
+  .cartographer-inset{margin-inline:12px}
+  .book-intro{padding:12px}
+  .intro-book{height:280px}
+  .intro-commands h2{font-size:23px}
+}
+@keyframes leaf-fade{0%,100%{opacity:1}47%{opacity:.15}}
+@media(prefers-reduced-motion:reduce){
+  .intro-book-cover,.book-intro,.journal-modal .journal-page,.quest-grid,.journal-turn-leaf{animation:none!important;transition:none!important}
+}
+
+/* v4: stable four-per-leaf quest spread. Empty grid cells hold the page size,
+   preventing the pagination buttons and document scroll from moving between folios. */
+.quest-grid.has-multiple-folios:not([hidden]){
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(410px,auto));
+  grid-auto-rows:minmax(410px,auto);
+  min-height:900px;
+  align-items:stretch;
+  overflow-anchor:none;
+}
+.board-frame,.quest-pagination{overflow-anchor:none}
+.completed-board{margin-top:64px;position:relative}
+.completed-board-heading{background:linear-gradient(0deg,#483323,#745136);border-color:#b58e56}
+.completed-board-intro{display:flex;align-items:center;gap:14px;padding:19px 22px 5px;background:#d6be92;color:#67492f;font:18px/1.4 var(--body)}
+.completed-board-intro p{margin:0}
+.completed-seal{font-size:30px;color:#884c31}
+.completed-grid{background:#d6be92}
+.completed-grid .quest-card{background:linear-gradient(145deg,#f1dfb7,#dfc496)}
+.completed-grid .quest-status{background:#526b4a;color:#fff0ce}
+.completed-grid .quest-card::before{opacity:.8}
+.quest-empty{margin:0;padding:36px 24px;text-align:center;background:#e9d4ac;border:1px dashed #a37e4e;color:#694b30;font-size:19px;line-height:1.5}
+.quest-state-editor{padding:14px 16px;background:#e8cfa3;border:1px solid #ad8c5d}
+.quest-state-editor small{font-size:14px;color:#75573c;font-weight:400;line-height:1.45}
+@media(max-width:680px){
+  .quest-grid.has-multiple-folios:not([hidden]){
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(4,minmax(360px,auto));
+    grid-auto-rows:minmax(360px,auto);
+    min-height:1600px;
+  }
+  .completed-board{margin-top:40px}
+  .completed-board-intro{padding:15px 16px 4px;font-size:16px}
+}

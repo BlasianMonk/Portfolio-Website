@@ -12,10 +12,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="parchment.css" />
+  <!-- The art-theme.css file is inactive until you install the optional art pack. -->
+  <link rel="stylesheet" href="journal-features.css" />
+  <link rel="stylesheet" href="art-theme.css" />
   <script src="content.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- First-visit book-opening intro. Hidden until JS activates it. -->
+  <div class="book-intro" id="book-intro" role="dialog" aria-modal="true" aria-label="Open the journal" hidden>
+    <div class="intro-stage">
+      <div class="intro-book" aria-hidden="true">
+        <div class="intro-book-back"></div><div class="intro-book-pages"></div><div class="intro-book-cover">
+          <div class="intro-cover-seal">✦</div><div class="intro-cover-rule"></div>
+          <span>THE HUNTER'S CODEX</span><small>A DEVELOPER'S FIELD JOURNAL</small>
+          <div class="intro-cover-rule"></div><div class="intro-cover-mark">✣</div>
+        </div>
+      </div>
+      <div class="intro-commands">
+        <span class="intro-kicker">THE ARCHIVIST INVITES YOU</span>
+        <h2>Every legend begins<br/>with an open page.</h2>
+        <button id="open-journal" class="intro-open" type="button">OPEN THE JOURNAL <span aria-hidden="true">→</span></button>
+        <button id="skip-intro" class="intro-skip" type="button">Skip introduction</button>
+      </div>
+    </div>
+  </div>
   <a href="#main" class="skip-link">Skip to content</a>
   <div class="site-grain" aria-hidden="true"></div>
   <div class="progress-track" aria-hidden="true"><span id="scroll-progress"></span></div>
@@ -78,8 +99,8 @@
     <section class="section quests-section" id="quests" aria-labelledby="quests-title">
       <div class="section-head reveal">
         <div><p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER I <span class="line-decoration"></span> THE GUILD HALL</p>
-          <h2 id="quests-title">The <em>Quest Board</em></h2>
-          <p class="section-intro">Every project is a new hunt. Browse the field reports, inspect the work, and see what I've been building.</p>
+          <h2 id="quests-title">The <em>Quest Archive</em></h2>
+          <p class="section-intro">Browse open contracts and finished expeditions, four entries to a leaf. Open each dossier for its story, tools, and lessons learned.</p>
         </div>
         <div class="section-stamp" aria-hidden="true"><span>GUILD</span><strong>★</strong><span>APPROVED</span></div>
       </div>
@@ -92,7 +113,25 @@
           <button type="button" class="filter-button" data-filter="other" aria-pressed="false">Other</button>
         </div>
         <div class="quest-grid" id="quest-grid" aria-live="polite"></div>
-        <p class="board-footnote"><span>✧</span> SELECT A QUEST TO VIEW ITS FIELD REPORT <span>✧</span></p>
+        <p class="quest-empty" id="available-empty" hidden>No available quests are posted. Check the completed archive below, or return when new quests are added.</p>
+        <nav class="quest-pagination" aria-label="Quest archive pages">
+          <button type="button" id="quest-prev" aria-label="Previous archive page">← PREVIOUS LEAF</button>
+          <span class="quest-page-label" id="quest-page-label" aria-live="polite">FOLIO 1 / 1</span>
+          <button type="button" id="quest-next" aria-label="Next archive page">NEXT LEAF →</button>
+        </nav>
+        <div class="cartographer-inset" id="map-art-slot" aria-hidden="true"><img id="map-custom-art" alt="" hidden /></div>
+        <p class="board-footnote"><span>✧</span> TURN THE LEAF OR OPEN A QUEST DOSSIER <span>✧</span></p>
+      </div>
+      <div class="board-frame completed-board reveal" id="completed-quests">
+        <div class="board-heading completed-board-heading"><span class="board-pin" aria-hidden="true"></span><span>COMPLETED QUESTS</span><span class="board-heading-right" id="completed-count">00 SEALED</span><span class="board-pin" aria-hidden="true"></span></div>
+        <div class="completed-board-intro"><span class="completed-seal" aria-hidden="true">✥</span><p>Finished expeditions, filed in the guild's permanent records.</p></div>
+        <div class="quest-grid completed-grid" id="completed-grid" aria-live="polite"></div>
+        <p class="quest-empty" id="completed-empty" hidden>No completed quests have been filed yet. Open <strong>editor.html</strong> and mark a project as <strong>Completed quest</strong> to add it here.</p>
+        <nav class="quest-pagination" id="completed-pagination" aria-label="Completed quest archive pages">
+          <button type="button" id="completed-prev" aria-label="Previous completed archive page">← PREVIOUS LEAF</button>
+          <span class="quest-page-label" id="completed-page-label" aria-live="polite">FOLIO 1 / 1</span>
+          <button type="button" id="completed-next" aria-label="Next completed archive page">NEXT LEAF →</button>
+        </nav>
       </div>
     </section>
 
@@ -105,7 +144,7 @@
       <div class="profile-layout">
         <div class="profile-card reveal">
           <div class="profile-topline"><span>GUILD IDENTIFICATION</span><span>NO. 001</span></div>
-          <div class="profile-emblem" aria-hidden="true"><div class="profile-ring"><img src="assets/crest.svg" alt="" /></div></div>
+          <div class="profile-emblem" aria-hidden="true"><div class="profile-ring" id="character-art-slot"><img src="assets/crest.svg" alt="" class="profile-default-crest" /><img id="profile-portrait" alt="" hidden /></div></div>
           <span class="profile-label">NAME OF HUNTER</span>
           <h3 id="profile-name">Your Name</h3>
           <span class="profile-role" id="profile-role">Developer · Builder · Explorer</span>
@@ -136,6 +175,7 @@
         <p class="section-intro">The tools, languages, and systems I carry into every new adventure.</p>
       </div></div>
       <div class="armory-grid" id="armory-grid"></div>
+      <div class="guild-illustration" id="guild-art-slot" aria-hidden="true"><img id="guild-custom-art" alt="" hidden /></div>
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
@@ -154,6 +194,7 @@
     <div class="journal-shell">
       <div class="journal-ribbon" aria-hidden="true"></div>
       <div class="journal-spread">
+        <div class="journal-turn-leaf" aria-hidden="true"></div>
         <section class="journal-page journal-page-left">
           <div class="journal-page-inner">
             <p class="journal-kicker" id="dialog-kind">FIELD DOSSIER</p>
@@ -178,6 +219,11 @@
           </div>
         </section>
       </div>
+      <nav class="journal-leaf-nav" aria-label="Turn journal pages">
+        <button type="button" id="journal-prev" aria-label="Previous journal entry">← PREVIOUS PAGE</button>
+        <span id="journal-page-count" aria-live="polite">PAGE 1 OF 1</span>
+        <button type="button" id="journal-next" aria-label="Next journal entry">NEXT PAGE →</button>
+      </nav>
     </div>
   </dialog>
 </body>
