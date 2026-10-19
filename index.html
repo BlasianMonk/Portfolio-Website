@@ -1,230 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#3b281b" />
-  <meta name="description" content="A handcrafted, fantasy guild-inspired portfolio for software engineering, game development, and systems projects." />
-  <title>Hunter's Codex — Developer Portfolio</title>
-  <link rel="icon" href="assets/crest.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#080816" />
+  <meta name="description" content="A synthwave-inspired interactive portfolio of software development, game systems and homelab projects." />
+  <title>NEON // ARCHIVE — Developer Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/neon-mark.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="parchment.css" />
-  <!-- The art-theme.css file is inactive until you install the optional art pack. -->
-  <link rel="stylesheet" href="journal-features.css" />
-  <link rel="stylesheet" href="art-theme.css" />
   <script src="content.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- First-visit book-opening intro. Hidden until JS activates it. -->
-  <div class="book-intro" id="book-intro" role="dialog" aria-modal="true" aria-label="Open the journal" hidden>
-    <div class="intro-stage">
-      <div class="intro-book" aria-hidden="true">
-        <div class="intro-book-back"></div><div class="intro-book-pages"></div><div class="intro-book-cover">
-          <div class="intro-cover-seal">✦</div><div class="intro-cover-rule"></div>
-          <span>THE HUNTER'S CODEX</span><small>A DEVELOPER'S FIELD JOURNAL</small>
-          <div class="intro-cover-rule"></div><div class="intro-cover-mark">✣</div>
-        </div>
-      </div>
-      <div class="intro-commands">
-        <span class="intro-kicker">THE ARCHIVIST INVITES YOU</span>
-        <h2>Every legend begins<br/>with an open page.</h2>
-        <button id="open-journal" class="intro-open" type="button">OPEN THE JOURNAL <span aria-hidden="true">→</span></button>
-        <button id="skip-intro" class="intro-skip" type="button">Skip introduction</button>
-      </div>
-    </div>
-  </div>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <div class="site-grain" aria-hidden="true"></div>
-  <div class="progress-track" aria-hidden="true"><span id="scroll-progress"></span></div>
-
-  <header class="site-header" id="top">
-    <a class="brand" href="#home" aria-label="Hunter's Codex, return to top">
-      <img src="assets/crest.svg" width="38" height="38" alt="" />
-      <span class="brand-wordmark" id="brand-name">HUNTER'S <span>CODEX</span><small>THE DEVELOPER'S GUILD</small></span>
-    </a>
-    <nav class="header-nav" aria-label="Primary navigation">
-      <a href="#quests">Quests</a>
-      <a href="#hunter">Hunter</a>
-      <a href="#armory">Armory</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button type="button" class="effects-toggle" id="effects-toggle" aria-pressed="false" title="Toggle ambient effects">
-      <span class="effect-indicator" aria-hidden="true"></span>
-      <span id="effects-label">Ambience: On</span>
-    </button>
-    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <header class="nav" id="top">
+    <a class="brand" href="#home" aria-label="Back to home"><img src="assets/neon-mark.svg" alt="" width="34" height="34" /><span id="brand-name">NEON<span class="brand-slash">//</span><b>ARCHIVE</b><small>THE DEVELOPER TERMINAL</small></span></a>
+    <nav class="desktop-links" aria-label="Main navigation"><a href="#missions">PROJECTS</a><a href="#profile">ABOUT</a><a href="#loadout">SKILLS</a><a href="#contact">CONTACT</a></nav>
+    <div class="nav-actions"><span class="online"><span class="online-dot"></span> SYSTEM ONLINE</span><button class="nav-menu-btn" id="nav-menu-btn" aria-controls="mobile-menu" aria-expanded="false" type="button">MENU <span>☰</span></button></div>
   </header>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-    <a href="#quests">Quest Board</a><a href="#hunter">Hunter's Notes</a><a href="#armory">The Armory</a><a href="#contact">Send a Raven</a>
-  </nav>
-
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="#missions">PROJECTS</a><a href="#profile">ABOUT</a><a href="#loadout">SKILLS</a><a href="#contact">CONTACT</a></nav>
   <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="landscape" aria-hidden="true"></div>
-      <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="stars" aria-hidden="true"></div>
-      <div class="fireflies" id="fireflies" aria-hidden="true"></div>
-      <div class="hero-vertical hero-vertical-left" aria-hidden="true">EST. MMXXVI · THE DEVELOPER'S GUILD</div>
-      <div class="hero-vertical hero-vertical-right" aria-hidden="true">A WORLD BUILT ONE LINE AT A TIME</div>
-
-      <div class="hero-content">
-        <div class="crest-frame" aria-hidden="true"><img src="assets/crest.svg" alt="" /></div>
-        <p class="eyebrow hero-eyebrow"><span class="flourish"></span> WELCOME, TRAVELER <span class="flourish"></span></p>
-        <h1 id="hero-title"><span id="hero-line-one">A NEW QUEST</span><em id="hero-line-two">AWAITS.</em></h1>
-        <p class="hero-description" id="hero-intro">Building worlds, solving problems, and forging things that work.</p>
-        <div class="hero-menu" role="group" aria-label="Explore portfolio">
-          <a class="menu-choice menu-choice-primary" href="#quests"><span class="menu-number">01</span><span>ENTER THE QUEST BOARD</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
-          <a class="menu-choice" href="#hunter"><span class="menu-number">02</span><span>VIEW HUNTER'S NOTES</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
-          <a class="menu-choice" href="#contact"><span class="menu-number">03</span><span>CONTACT THE GUILD</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-scene" aria-hidden="true"><img src="assets/synthwave-horizon.svg" alt="" /></div>
+      <div class="hero-haze" aria-hidden="true"></div>
+      <div class="hero-body">
+        <div class="hero-copy">
+          <p class="mono eyebrow"><span class="pink-square"></span> PORTFOLIO.EXE <span class="dim">/ VERSION 2.0</span></p>
+          <p class="hero-pretitle">Welcome to the digital frontier_</p>
+          <h1 id="hero-title"><span id="hero-line-one">BUILDING DIGITAL</span><strong id="hero-line-two">WORLDS.</strong></h1>
+          <p class="hero-subcopy" id="hero-intro">Building worlds, solving problems, and forging things that work.</p>
+          <div class="hero-buttons"><a class="button button-primary" href="#missions"><span>VIEW MY WORK</span><span>↗</span></a><a class="button button-outline" href="#profile">ABOUT THE DEVELOPER <span>→</span></a></div>
+          <div class="hero-specs"><div><span class="mono">FOCUS_01</span><strong>SOFTWARE</strong></div><div><span class="mono">FOCUS_02</span><strong>GAME DEV</strong></div><div><span class="mono">FOCUS_03</span><strong>SYSTEMS</strong></div></div>
         </div>
-        <p class="hero-hint"><span class="hint-asterisk">✧</span> CHOOSE YOUR DESTINATION <span class="hint-asterisk">✧</span></p>
+        <div class="hero-decor" aria-hidden="true"><span class="hero-decor-top">[ SYNTHETIC DREAMS / REAL WORLD CODE ]</span><span class="hero-decor-cross">✳</span><span class="hero-decor-bottom">CH 00 · THE BEGINNING</span></div>
       </div>
-      <a class="scroll-cue" href="#quests"><span>SCROLL TO EXPLORE</span><span class="scroll-line" aria-hidden="true"></span></a>
-      <div class="hero-coordinates" aria-hidden="true">GUILD OUTPOST // 001</div>
+      <a href="#missions" class="hero-scroll mono">SCROLL TO EXPLORE <span>↓</span></a>
+      <div class="hero-edgeline" aria-hidden="true"></div>
     </section>
 
-    <div class="record-strip" aria-label="Portfolio overview">
-      <span><span class="record-icon">✦</span> GUILD ARCHIVE <strong>001</strong></span>
-      <span>CLASS <strong>DEVELOPER / CREATOR</strong></span>
-      <span>QUEST STATUS <strong><span class="live-dot"></span> OPEN TO ADVENTURE</strong></span>
-      <span class="record-end">SCROLL FOR FIELD NOTES <span>↓</span></span>
-    </div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-inner"><span>◈ &nbsp; SYSTEMS ONLINE</span><span>◈ &nbsp; IDEAS IN MOTION</span><span>◈ &nbsp; BUILD • LEARN • REPEAT</span><span>◈ &nbsp; SOFTWARE / GAMES / INFRASTRUCTURE</span><span>◈ &nbsp; SYSTEMS ONLINE</span></div></div>
 
-    <section class="section quests-section" id="quests" aria-labelledby="quests-title">
-      <div class="section-head reveal">
-        <div><p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER I <span class="line-decoration"></span> THE GUILD HALL</p>
-          <h2 id="quests-title">The <em>Quest Archive</em></h2>
-          <p class="section-intro">Browse open contracts and finished expeditions, four entries to a leaf. Open each dossier for its story, tools, and lessons learned.</p>
-        </div>
-        <div class="section-stamp" aria-hidden="true"><span>GUILD</span><strong>★</strong><span>APPROVED</span></div>
-      </div>
-      <div class="board-frame reveal">
-        <div class="board-heading"><span class="board-pin" aria-hidden="true"></span><span>AVAILABLE QUESTS</span><span class="board-heading-right" id="quest-count">04 POSTED</span><span class="board-pin" aria-hidden="true"></span></div>
-        <div class="quest-filters" role="group" aria-label="Filter projects">
-          <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All Quests <span>04</span></button>
-          <button type="button" class="filter-button" data-filter="development" aria-pressed="false">Code & Games</button>
-          <button type="button" class="filter-button" data-filter="systems" aria-pressed="false">Systems & Tools</button>
-          <button type="button" class="filter-button" data-filter="other" aria-pressed="false">Other</button>
-        </div>
-        <div class="quest-grid" id="quest-grid" aria-live="polite"></div>
-        <p class="quest-empty" id="available-empty" hidden>No available quests are posted. Check the completed archive below, or return when new quests are added.</p>
-        <nav class="quest-pagination" aria-label="Quest archive pages">
-          <button type="button" id="quest-prev" aria-label="Previous archive page">← PREVIOUS LEAF</button>
-          <span class="quest-page-label" id="quest-page-label" aria-live="polite">FOLIO 1 / 1</span>
-          <button type="button" id="quest-next" aria-label="Next archive page">NEXT LEAF →</button>
-        </nav>
-        <div class="cartographer-inset" id="map-art-slot" aria-hidden="true"><img id="map-custom-art" alt="" hidden /></div>
-        <p class="board-footnote"><span>✧</span> TURN THE LEAF OR OPEN A QUEST DOSSIER <span>✧</span></p>
-      </div>
-      <div class="board-frame completed-board reveal" id="completed-quests">
-        <div class="board-heading completed-board-heading"><span class="board-pin" aria-hidden="true"></span><span>COMPLETED QUESTS</span><span class="board-heading-right" id="completed-count">00 SEALED</span><span class="board-pin" aria-hidden="true"></span></div>
-        <div class="completed-board-intro"><span class="completed-seal" aria-hidden="true">✥</span><p>Finished expeditions, filed in the guild's permanent records.</p></div>
-        <div class="quest-grid completed-grid" id="completed-grid" aria-live="polite"></div>
-        <p class="quest-empty" id="completed-empty" hidden>No completed quests have been filed yet. Open <strong>editor.html</strong> and mark a project as <strong>Completed quest</strong> to add it here.</p>
-        <nav class="quest-pagination" id="completed-pagination" aria-label="Completed quest archive pages">
-          <button type="button" id="completed-prev" aria-label="Previous completed archive page">← PREVIOUS LEAF</button>
-          <span class="quest-page-label" id="completed-page-label" aria-live="polite">FOLIO 1 / 1</span>
-          <button type="button" id="completed-next" aria-label="Next completed archive page">NEXT LEAF →</button>
-        </nav>
-      </div>
-    </section>
+    <section class="section mission-section" id="missions" aria-labelledby="mission-heading">
+      <div class="section-inner">
+        <div class="heading-row"><div><p class="mono overline">[ 01 / THE PROJECT LOG ]</p><h2 id="mission-heading">MISSION <em>ARCHIVE<span class="blink">_</span></em></h2><p class="section-description">Selected experiments, systems and things I've built. Choose a mission to open its dossier.</p></div><div class="heading-right mono">DATABASE <span class="status-cyan">CONNECTED</span><span class="line"></span>ACCESS GRANTED</div></div>
 
-    <section class="section hunter-section" id="hunter" aria-labelledby="hunter-title">
-      <div class="section-head reveal"><div>
-        <p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER II <span class="line-decoration"></span> THE ADVENTURER</p>
-        <h2 id="hunter-title">Hunter's <em>Notes</em></h2>
-        <p class="section-intro">A little about the person behind the keyboard.</p>
-      </div></div>
-      <div class="profile-layout">
-        <div class="profile-card reveal">
-          <div class="profile-topline"><span>GUILD IDENTIFICATION</span><span>NO. 001</span></div>
-          <div class="profile-emblem" aria-hidden="true"><div class="profile-ring" id="character-art-slot"><img src="assets/crest.svg" alt="" class="profile-default-crest" /><img id="profile-portrait" alt="" hidden /></div></div>
-          <span class="profile-label">NAME OF HUNTER</span>
-          <h3 id="profile-name">Your Name</h3>
-          <span class="profile-role" id="profile-role">Developer · Builder · Explorer</span>
-          <div class="profile-divider"><span>✥</span></div>
-          <dl class="profile-details">
-            <div><dt>Guild</dt><dd id="profile-guild">Independent Developer</dd></div>
-            <div><dt>Current Quest</dt><dd id="profile-education">B.S. Computer Science · WGU</dd></div>
-            <div><dt>Specialty</dt><dd id="profile-specialty">Code, Games & Infrastructure</dd></div>
-            <div><dt>Status</dt><dd><span class="live-dot dark"></span> <span id="profile-status">Always Learning</span></dd></div>
-          </dl>
-          <span class="profile-corner profile-corner-tl"></span><span class="profile-corner profile-corner-tr"></span><span class="profile-corner profile-corner-bl"></span><span class="profile-corner profile-corner-br"></span>
+        <div class="archive-panel" id="available-panel" data-archive="available">
+          <div class="archive-title"><div><span class="archive-symbol">//</span><h3>ACTIVE MISSIONS</h3><small>PROJECTS IN PROGRESS &amp; FIELD NOTES</small></div><span class="archive-count mono" id="available-count">00 ENTRIES</span></div>
+          <div class="filters mono" id="available-filters" role="group" aria-label="Filter active projects"><button type="button" data-filter="all" class="active" aria-pressed="true">ALL</button><button type="button" data-filter="development" aria-pressed="false">CODE &amp; GAMES</button><button type="button" data-filter="systems" aria-pressed="false">SYSTEMS</button><button type="button" data-filter="other" aria-pressed="false">OTHER</button></div>
+          <div class="mission-grid" id="available-grid" aria-live="polite"></div>
+          <p class="empty" id="available-empty" hidden>No active missions in this category. Check another channel.</p>
+          <div class="pagination" aria-label="Active mission pages"><button type="button" id="available-prev">← PREV PAGE</button><span id="available-page" class="mono">PAGE 01 / 01</span><button type="button" id="available-next">NEXT PAGE →</button></div>
         </div>
-        <div class="hunter-copy reveal">
-          <p class="small-label">FIELD RECORD // ABOUT ME</p>
-          <h3><span id="about-line-one">Curiosity is my</span><br/><em id="about-line-two">favorite weapon.</em></h3>
-          <p id="about-one">I enjoy the space where software, systems, and creativity meet.</p>
-          <p id="about-two">I’m currently pursuing a B.S. in Computer Science.</p>
-          <div class="hunter-highlights" id="hunter-highlights"></div>
-          <a href="#armory" class="text-link">INSPECT MY TOOLKIT <span aria-hidden="true">↗</span></a>
+
+        <div class="archive-panel completed-panel" id="completed-panel" data-archive="completed">
+          <div class="archive-title"><div><span class="archive-symbol cyan-symbol">✓</span><h3>COMPLETED MISSIONS</h3><small>DEPLOYED SYSTEMS &amp; FINISHED PROJECTS</small></div><span class="archive-count mono" id="completed-count">00 ENTRIES</span></div>
+          <div class="mission-grid" id="completed-grid" aria-live="polite"></div>
+          <p class="empty" id="completed-empty" hidden>No completed projects listed yet. Mark a project completed in the editor to display it here.</p>
+          <div class="pagination" aria-label="Completed mission pages"><button type="button" id="completed-prev">← PREV PAGE</button><span id="completed-page" class="mono">PAGE 01 / 01</span><button type="button" id="completed-next">NEXT PAGE →</button></div>
         </div>
       </div>
     </section>
 
-    <section class="section armory-section" id="armory" aria-labelledby="armory-title">
-      <div class="section-head reveal"><div>
-        <p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER III <span class="line-decoration"></span> EQUIPPED & READY</p>
-        <h2 id="armory-title">The <em>Toolbox</em></h2>
-        <p class="section-intro">The tools, languages, and systems I carry into every new adventure.</p>
-      </div></div>
-      <div class="armory-grid" id="armory-grid"></div>
-      <div class="guild-illustration" id="guild-art-slot" aria-hidden="true"><img id="guild-custom-art" alt="" hidden /></div>
-    </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-decoration" aria-hidden="true">✥</div>
-      <div class="contact-inner reveal"><p class="eyebrow"><span class="flourish"></span> FINAL CHAPTER <span class="flourish"></span></p><h2 id="contact-title">The next quest<br/>starts <em>with a message.</em></h2><p id="contact-intro">Have a role, project, or idea worth exploring? The guild hall is open.</p>
-        <div class="contact-actions"><a href="#contact" class="contact-primary" id="email-link">SEND A RAVEN <span aria-hidden="true">↗</span></a><a class="contact-secondary" id="linkedin-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a></div>
-        <p class="contact-help" id="contact-help">Contact details can be edited in <a href="editor.html">the Portfolio Editor</a>.</p>
+    <section class="section profile-section" id="profile" aria-labelledby="profile-heading">
+      <div class="section-inner">
+        <div class="heading-row"><div><p class="mono overline">[ 02 / PERSONNEL FILE ]</p><h2 id="profile-heading">BEHIND THE <em>SCREEN<span class="blink">_</span></em></h2></div><div class="heading-right mono">PROFILE VERIFIED <span class="status-cyan">●</span></div></div>
+        <div class="profile-layout">
+          <div class="profile-visual"><div class="profile-frame"><div class="frame-top mono"><span>CAM_01 / OPERATOR</span><span>REC <span class="red-dot">●</span></span></div><img src="assets/operative.svg" id="profile-portrait" alt="Futuristic avatar illustration" /><span class="frame-corner corner-1"></span><span class="frame-corner corner-2"></span></div><div class="profile-caption mono"><span>IDENTITY_01</span><strong id="profile-name">DEVELOPER</strong><span id="profile-role">Builder / Explorer</span></div></div>
+          <div class="profile-terminal"><div class="terminal-head mono"><span><span class="terminal-dot magenta"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span></span> <span>ABOUT_ME.TXT</span><span>◧</span></div><div class="terminal-content"><p class="mono tiny pink">&gt; WHO_AM_I</p><h3><span id="about-line-one">Curiosity is my</span><br /><em id="about-line-two">favorite weapon.</em></h3><p id="about-one"></p><p id="about-two"></p><div class="profile-facts"><div><span>STATUS</span><strong id="profile-status"></strong></div><div><span>AFFILIATION</span><strong id="profile-guild"></strong></div><div><span>EDUCATION</span><strong id="profile-education"></strong></div><div><span>SPECIALIZATION</span><strong id="profile-specialty"></strong></div></div><div id="profile-highlights" class="highlights"></div></div></div>
+        </div>
       </div>
     </section>
+
+    <section class="section loadout-section" id="loadout" aria-labelledby="loadout-heading">
+      <div class="section-inner"><div class="heading-row"><div><p class="mono overline">[ 03 / TECH STACK ]</p><h2 id="loadout-heading">SYSTEM <em>LOADOUT<span class="blink">_</span></em></h2><p class="section-description">The languages, platforms and tools in my arsenal. Open a module to inspect the full stack.</p></div><div class="heading-right mono">MODULES LOADED <span class="status-cyan" id="skill-count">00</span></div></div><div class="loadout-grid" id="skill-grid"></div></div>
+    </section>
+
+    <section class="section network-section" id="network" aria-labelledby="network-heading"><div class="section-inner"><div class="heading-row"><div><p class="mono overline">[ 04 / DIGITAL TERRITORY ]</p><h2 id="network-heading">WORLD <em>MAP<span class="blink">_</span></em></h2><p class="section-description">A little window into the worlds and systems that power my curiosity.</p></div></div><div class="network-grid"><figure class="network-card"><div class="network-card-label mono">GRID_A / OPERATIONS HUB <span>01</span></div><img src="assets/cyber-city.svg" id="guild-image" alt="Retro-futuristic skyline representing the developer's operations hub" /><figcaption>THE OPERATIONS HUB <span>◈</span></figcaption></figure><figure class="network-card"><div class="network-card-label mono">GRID_B / NETWORK TOPOLOGY <span>02</span></div><img src="assets/network-map.svg" id="map-image" alt="Illustrated digital map and network topology" /><figcaption>CONNECTED SYSTEMS <span>◈</span></figcaption></figure></div></div></section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-inner"><div class="contact-panel"><span class="contact-ornament mono">[ TRANSMISSION CHANNEL / OPEN ]</span><span class="contact-glow" aria-hidden="true">✳</span><p class="mono overline">[ 05 / GET IN TOUCH ]</p><h2 id="contact-heading">LET'S BUILD<br /><em>SOMETHING NEW.</em></h2><p id="contact-intro"></p><div class="contact-actions"><a class="button button-primary" id="email-link" href="#contact">SEND TRANSMISSION ↗</a><a class="button button-outline" id="linkedin-link" href="#contact" target="_blank" rel="noopener noreferrer">LINKEDIN →</a></div><p class="mono contact-email" id="contact-help"></p><div class="contact-bottom mono"><span>END TRANSMISSION_</span><span>THANK YOU FOR VISITING</span></div></div></div></section>
   </main>
+  <footer class="footer"><span class="mono">© <span id="year"></span> <span id="footer-title">NEON // ARCHIVE</span></span><span class="mono">BUILT WITH <span class="pink">♥</span> &amp; VANILLA WEB TECH</span><a class="mono" href="#home" id="back-to-top">BACK TO TOP ↑</a></footer>
 
-  <footer class="site-footer"><span><img src="assets/crest.svg" width="25" height="25" alt="" /> <span id="footer-site-name">HUNTER'S CODEX</span></span><span>HANDCRAFTED WITH CODE & CURIOSITY <span aria-hidden="true">✦</span> <span id="copyright-year">2026</span></span><a href="#home">RETURN TO CAMP ↑</a></footer>
-
-  <dialog class="journal-modal" id="quest-modal" aria-labelledby="dialog-title" aria-describedby="dialog-description">
-    <button type="button" class="modal-close" id="modal-close" aria-label="Close journal entry">✕</button>
-    <div class="journal-shell">
-      <div class="journal-ribbon" aria-hidden="true"></div>
-      <div class="journal-spread">
-        <div class="journal-turn-leaf" aria-hidden="true"></div>
-        <section class="journal-page journal-page-left">
-          <div class="journal-page-inner">
-            <p class="journal-kicker" id="dialog-kind">FIELD DOSSIER</p>
-            <div class="journal-illustration" id="dialog-illustration" aria-hidden="true"></div>
-            <div class="journal-stamp-row">
-              <span class="journal-stamp" id="dialog-index">NO. 001</span>
-              <span class="journal-stamp is-secondary" id="dialog-badge">QUEST</span>
-            </div>
-            <p class="eyebrow copper" id="dialog-category">QUEST DETAILS</p>
-            <h2 id="dialog-title">Quest Title</h2>
-            <p class="journal-summary" id="dialog-summary">Quest summary.</p>
-          </div>
-        </section>
-        <section class="journal-page journal-page-right">
-          <div class="journal-page-inner">
-            <div class="modal-topline">ARCHIVIST'S NOTES <span id="dialog-symbol">✦</span></div>
-            <p id="dialog-description">Quest description.</p>
-            <h3 id="dialog-tags-heading">TOOLS &amp; EQUIPMENT</h3>
-            <div class="modal-tags" id="dialog-tags"></div>
-            <div class="modal-action" id="dialog-action"></div>
-            <p class="modal-caption">✥ ENTRY SEALED IN THE GUILD JOURNAL ✥</p>
-          </div>
-        </section>
-      </div>
-      <nav class="journal-leaf-nav" aria-label="Turn journal pages">
-        <button type="button" id="journal-prev" aria-label="Previous journal entry">← PREVIOUS PAGE</button>
-        <span id="journal-page-count" aria-live="polite">PAGE 1 OF 1</span>
-        <button type="button" id="journal-next" aria-label="Next journal entry">NEXT PAGE →</button>
-      </nav>
-    </div>
-  </dialog>
+  <dialog id="dossier" class="dossier" aria-labelledby="dossier-title"><div class="dossier-shell"><div class="dossier-top mono"><span>NEON_ARCHIVE / <span id="dossier-number">ENTRY 001</span></span><button id="dossier-close" aria-label="Close dossier" type="button">✕ CLOSE</button></div><div class="dossier-main"><div class="dossier-art" id="dossier-art"></div><div class="dossier-text"><p id="dossier-type" class="mono pink tiny">PROJECT REPORT</p><h2 id="dossier-title">MISSION NAME</h2><p id="dossier-summary" class="dossier-summary"></p><p id="dossier-details"></p><p class="mono pink tiny">TECHNOLOGIES / MODULES</p><div id="dossier-tags" class="tags"></div><div id="dossier-link"></div></div></div><div class="dossier-nav"><button id="dossier-prev" type="button">← PREVIOUS RECORD</button><span id="dossier-position" class="mono">01 / 04</span><button id="dossier-next" type="button">NEXT RECORD →</button></div></div></dialog>
 </body>
 </html>

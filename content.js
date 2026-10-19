@@ -1,11 +1,11 @@
-/* Edited with Guild Scribe. Open editor.html to change this content. */
+/* Edited with Neon Studio. Open editor.html to change this content. */
 window.SITE_CONTENT = {
-  "siteTitle": "Hunter's Codex",
+  "siteTitle": "NEON // ARCHIVE",
   "name": "Dante Sin",
   "role": "Developer · Builder · Explorer",
-  "heroLineOne": "A NEW COMPANION",
-  "heroLineTwo": "AWAITS.",
-  "heroIntro": "Building worlds, solving problems, and forging things that work. Software development · Game systems · Homelab adventures",
+  "heroLineOne": "BUILDING DIGITAL",
+  "heroLineTwo": "WORLDS.",
+  "heroIntro": "Software engineering, game systems, and a homelab full of experiments. Building useful things and learning with every iteration.",
   "guild": "Independent Developer",
   "education": "B.S. Computer Science · WGU (in progress)",
   "specialty": "Code, Games & Infrastructure",
@@ -82,7 +82,7 @@ window.SITE_CONTENT = {
       "title": "The Home Server Homelab",
       "type": "systems",
       "category": "SYSTEMS / INFRASTRUCTURE",
-      "rank": "HR 04",
+      "rank": "",
       "status": "FIELD TESTED",
       "art": "server",
       "symbol": "▤",
@@ -105,7 +105,7 @@ window.SITE_CONTENT = {
       "title": "Unity Grappling Hook",
       "type": "development",
       "category": "GAME DEVELOPMENT / SAMPLE",
-      "rank": "HR 07",
+      "rank": "",
       "status": "CONCEPT ENTRY",
       "art": "hook",
       "symbol": "⚒",
@@ -125,7 +125,7 @@ window.SITE_CONTENT = {
       "title": "Hunter's Codex Portfolio",
       "type": "development",
       "category": "FRONTEND / WEB DEVELOPMENT",
-      "rank": "HR 04",
+      "rank": "",
       "status": "CURRENT BUILD",
       "art": "web",
       "symbol": "✦",
@@ -160,7 +160,9 @@ window.SITE_CONTENT = {
         "Trello"
       ],
       "link": "",
-      "questState": "completed"
+      "questState": "available"
     }
-  ]
+  ],
+  "accentColor": "#fa4ba9",
+  "secondaryColor": "#4de3e9"
 };
