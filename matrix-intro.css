@@ -35,8 +35,6 @@
 .matrix-progress{height:3px;background:#17432c;width:100%;overflow:hidden}
 .matrix-progress span{display:block;height:100%;width:0;background:var(--matrix-ink);box-shadow:0 0 16px var(--matrix-ink);transition:width .22s linear}
 .matrix-boot-status{font:10px/1.5 'Space Mono',monospace;letter-spacing:.17em;color:#8bcca4;min-height:15px;text-align:left;margin-top:12px}
-.matrix-skip{display:inline-flex;align-items:center;justify-content:space-between;gap:34px;margin:24px auto 0;padding:12px 18px;border:1px solid #49ff88ad;background:#061b11e8;color:#beffd0;box-shadow:inset 0 0 18px #49ff8814;font:700 10px/1.5 'Space Mono',monospace;letter-spacing:.16em;cursor:pointer;transition:background .2s,transform .2s}
-.matrix-skip:hover,.matrix-skip:focus-visible{background:#18482f;transform:translateY(-2px);outline:2px solid var(--matrix-ink);outline-offset:4px}
 .matrix-corner{position:absolute;bottom:19px;font:700 9px/1.4 'Space Mono',monospace;letter-spacing:.12em;color:#3f9a63;z-index:3}
 .matrix-corner-a{left:23px}.matrix-corner-b{right:23px}
 body.matrix-intro-active{overflow:hidden}
@@ -52,6 +50,6 @@ body.matrix-intro-active{overflow:hidden}
   .footer-tools{gap:12px}
 }
 @media(prefers-reduced-motion:reduce){
-  .matrix-intro,.matrix-skip{transition:none!important}
+  .matrix-intro{transition:none!important}
   .matrix-cursor,.matrix-pulse{animation:none!important}
 }

@@ -7,14 +7,13 @@
 (() => {
   const overlay = document.getElementById('matrix-intro');
   const canvas = document.getElementById('matrix-canvas');
-  const skip = document.getElementById('matrix-skip');
   const replay = document.getElementById('matrix-replay');
   const bar = document.getElementById('matrix-progress-bar');
   const status = document.getElementById('matrix-boot-status');
   const title = document.getElementById('matrix-intro-title');
   const label = document.getElementById('matrix-intro-label');
   const ctx = canvas?.getContext('2d', {alpha:false});
-  if (!overlay || !canvas || !ctx || !skip) return;
+  if (!overlay || !canvas || !ctx) return;
 
   const settings = window.SITE_CONTENT || {};
   const enabled = settings.matrixIntroEnabled !== false && settings.matrixIntroEnabled !== 'false';
@@ -44,7 +43,6 @@
   let fontSize = 17;
   let width = 0;
   let height = 0;
-  let beforeFocus = null;
   let lastStatus = -1;
   const glyphs = ['0','1'];
   const colorValues = [1,3,5].map(i => parseInt(selectedColor.slice(i,i+2),16));
@@ -128,8 +126,6 @@
     if (running) stop();
     clearTimeout(cleanupTimer);
     clearTimeout(finishTimer);
-    if (overlay.contains(document.activeElement)) skip.blur();
-    beforeFocus = document.activeElement;
     overlay.classList.remove('is-hiding');
     overlay.hidden = false;
     document.body.classList.add('matrix-intro-active');
@@ -142,14 +138,13 @@
     running = true;
     frame = requestAnimationFrame(draw);
     finishTimer = window.setTimeout(stop, duration);
-    skip.focus({preventScroll:true});
+    overlay.focus({preventScroll:true});
   }
 
-  skip.addEventListener('click',stop);
   document.addEventListener('keydown', e => {
     if (!running) return;
     if (e.key === 'Escape') {e.preventDefault();stop();}
-    if (e.key === 'Tab') {e.preventDefault();skip.focus({preventScroll:true});}
+    if (e.key === 'Tab') {e.preventDefault();overlay.focus({preventScroll:true});}
   });
   document.addEventListener('visibilitychange',() => {if (document.hidden) stop();});
   window.addEventListener('resize',() => {if (running) resize();},{passive:true});
