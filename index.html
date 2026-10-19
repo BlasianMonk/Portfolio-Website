@@ -11,13 +11,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="matrix-intro.css" />
   <script src="content.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="matrix-intro.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
   <div class="scanline" aria-hidden="true"></div>
+  <!-- Optional Matrix-style boot animation. Content and timing are editable in editor.html. -->
+  <div class="matrix-intro" id="matrix-intro" role="dialog" aria-modal="true" aria-label="Matrix-style portfolio introduction" hidden>
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+    <div class="matrix-glow" aria-hidden="true"></div>
+    <div class="matrix-terminal">
+      <div class="matrix-eyebrow">[ SYSTEM BOOT / SECURE CHANNEL ]</div>
+      <div class="matrix-terminal-frame">
+        <span class="matrix-terminal-icon" aria-hidden="true">//</span>
+        <p class="matrix-terminal-label" id="matrix-intro-label">ESTABLISHING CONNECTION</p>
+        <h2 id="matrix-intro-title">ENTER THE GRID<span class="matrix-cursor">_</span></h2>
+        <p class="matrix-terminal-sub">ACCESSING THE DEVELOPER ARCHIVE <span class="matrix-pulse">●</span></p>
+        <div class="matrix-progress" aria-hidden="true"><span id="matrix-progress-bar"></span></div>
+        <div class="matrix-boot-status" id="matrix-boot-status" aria-live="off">DECRYPTING PORTFOLIO DATA...</div>
+      </div>
+      <button class="matrix-skip" id="matrix-skip" type="button">SKIP INTRO <span aria-hidden="true">↗</span></button>
+    </div>
+    <span class="matrix-corner matrix-corner-a" aria-hidden="true">SYS.0x01</span>
+    <span class="matrix-corner matrix-corner-b" aria-hidden="true">01010100 / 01000101</span>
+  </div>
   <header class="nav" id="top">
     <a class="brand" href="#home" aria-label="Back to home"><img src="assets/neon-mark.svg" alt="" width="34" height="34" /><span id="brand-name">NEON<span class="brand-slash">//</span><b>ARCHIVE</b><small>THE DEVELOPER TERMINAL</small></span></a>
     <nav class="desktop-links" aria-label="Main navigation"><a href="#missions">PROJECTS</a><a href="#profile">ABOUT</a><a href="#loadout">SKILLS</a><a href="#contact">CONTACT</a></nav>
@@ -84,7 +105,7 @@
 
     <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-inner"><div class="contact-panel"><span class="contact-ornament mono">[ TRANSMISSION CHANNEL / OPEN ]</span><span class="contact-glow" aria-hidden="true">✳</span><p class="mono overline">[ 05 / GET IN TOUCH ]</p><h2 id="contact-heading">LET'S BUILD<br /><em>SOMETHING NEW.</em></h2><p id="contact-intro"></p><div class="contact-actions"><a class="button button-primary" id="email-link" href="#contact">SEND TRANSMISSION ↗</a><a class="button button-outline" id="linkedin-link" href="#contact" target="_blank" rel="noopener noreferrer">LINKEDIN →</a></div><p class="mono contact-email" id="contact-help"></p><div class="contact-bottom mono"><span>END TRANSMISSION_</span><span>THANK YOU FOR VISITING</span></div></div></div></section>
   </main>
-  <footer class="footer"><span class="mono">© <span id="year"></span> <span id="footer-title">NEON // ARCHIVE</span></span><span class="mono">BUILT WITH <span class="pink">♥</span> &amp; VANILLA WEB TECH</span><a class="mono" href="#home" id="back-to-top">BACK TO TOP ↑</a></footer>
+  <footer class="footer"><span class="mono">© <span id="year"></span> <span id="footer-title">NEON // ARCHIVE</span></span><span class="mono">BUILT WITH <span class="pink">♥</span> &amp; VANILLA WEB TECH</span><span class="footer-tools"><button type="button" class="matrix-replay" id="matrix-replay">REPLAY INTRO ↻</button><a class="mono" href="#home" id="back-to-top">BACK TO TOP ↑</a></span></footer>
 
   <dialog id="dossier" class="dossier" aria-labelledby="dossier-title"><div class="dossier-shell"><div class="dossier-top mono"><span>NEON_ARCHIVE / <span id="dossier-number">ENTRY 001</span></span><button id="dossier-close" aria-label="Close dossier" type="button">✕ CLOSE</button></div><div class="dossier-main"><div class="dossier-art" id="dossier-art"></div><div class="dossier-text"><p id="dossier-type" class="mono pink tiny">PROJECT REPORT</p><h2 id="dossier-title">MISSION NAME</h2><p id="dossier-summary" class="dossier-summary"></p><p id="dossier-details"></p><p class="mono pink tiny">TECHNOLOGIES / MODULES</p><div id="dossier-tags" class="tags"></div><div id="dossier-link"></div></div></div><div class="dossier-nav"><button id="dossier-prev" type="button">← PREVIOUS RECORD</button><span id="dossier-position" class="mono">01 / 04</span><button id="dossier-next" type="button">NEXT RECORD →</button></div></div></dialog>
 </body>

@@ -1,0 +1,57 @@
+/* MATRIX BOOT SEQUENCE / independent stylesheet
+   Does not modify the project's neon/synthwave styles. */
+.matrix-intro[hidden]{display:none!important}
+.matrix-intro{
+  position:fixed;inset:0;z-index:9998;overflow:hidden;
+  background:#010806;color:#b9ffcc;display:grid;place-items:center;
+  isolation:isolate;opacity:1;transition:opacity .78s cubic-bezier(.16,.65,.24,1);
+  --matrix-ink:#49ff88;
+}
+.matrix-intro.is-hiding{opacity:0;pointer-events:none}
+#matrix-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;display:block}
+.matrix-glow{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 46%,#03150bc2 0,#020d08a5 28%,#01050326 72%),
+  linear-gradient(90deg,#020b0642,transparent 23% 77%,#01060366);
+}
+.matrix-intro::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,transparent 0 4px,#00170b1c 5px 6px);
+  opacity:.62;
+}
+.matrix-terminal{width:min(700px,calc(100vw - 42px));padding:20px 12px;text-align:center;z-index:3;position:relative}
+.matrix-eyebrow{font:700 11px/1.5 'Space Mono',monospace;letter-spacing:.26em;color:#96ffc2;text-shadow:0 0 18px #49ff88bb;margin-bottom:20px}
+.matrix-terminal-frame{position:relative;padding:clamp(30px,5vw,55px) clamp(20px,5.4vw,64px) clamp(27px,4vw,38px);
+  background:linear-gradient(135deg,#020b08ec,#04140cdd);border:1px solid #49ff8870;
+  box-shadow:0 0 0 8px #04170944,0 0 45px #26db662d,inset 0 0 50px #0b6d312b;
+  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));
+}
+.matrix-terminal-frame::before{content:"";position:absolute;left:0;top:0;width:72px;height:3px;background:var(--matrix-ink);box-shadow:0 0 18px var(--matrix-ink)}
+.matrix-terminal-icon{display:inline-block;font:700 27px/1 'Chakra Petch',sans-serif;letter-spacing:-.15em;color:var(--matrix-ink);text-shadow:0 0 15px var(--matrix-ink)}
+.matrix-terminal-label{font:700 10px/1.5 'Space Mono',monospace;letter-spacing:.28em;color:var(--matrix-ink);margin:18px auto 9px;text-transform:uppercase;overflow-wrap:anywhere}
+#matrix-intro-title{font:700 clamp(35px,6.4vw,72px)/1 'Chakra Petch',sans-serif;letter-spacing:-.045em;text-shadow:0 0 12px #49ff8866,0 0 55px #49ff884d;margin:12px 0 17px;color:#d2ffdf;overflow-wrap:anywhere;text-transform:uppercase}
+.matrix-cursor{color:var(--matrix-ink);animation:matrix-blink .9s steps(1) infinite}
+@keyframes matrix-blink{50%{opacity:0}}
+.matrix-terminal-sub{font:700 10px/1.6 'Space Mono',monospace;letter-spacing:.1em;color:#83c7a4;margin:0 0 29px}
+.matrix-pulse{color:var(--matrix-ink);animation:matrix-blink 1.5s steps(1) infinite}
+.matrix-progress{height:3px;background:#17432c;width:100%;overflow:hidden}
+.matrix-progress span{display:block;height:100%;width:0;background:var(--matrix-ink);box-shadow:0 0 16px var(--matrix-ink);transition:width .22s linear}
+.matrix-boot-status{font:10px/1.5 'Space Mono',monospace;letter-spacing:.17em;color:#8bcca4;min-height:15px;text-align:left;margin-top:12px}
+.matrix-skip{display:inline-flex;align-items:center;justify-content:space-between;gap:34px;margin:24px auto 0;padding:12px 18px;border:1px solid #49ff88ad;background:#061b11e8;color:#beffd0;box-shadow:inset 0 0 18px #49ff8814;font:700 10px/1.5 'Space Mono',monospace;letter-spacing:.16em;cursor:pointer;transition:background .2s,transform .2s}
+.matrix-skip:hover,.matrix-skip:focus-visible{background:#18482f;transform:translateY(-2px);outline:2px solid var(--matrix-ink);outline-offset:4px}
+.matrix-corner{position:absolute;bottom:19px;font:700 9px/1.4 'Space Mono',monospace;letter-spacing:.12em;color:#3f9a63;z-index:3}
+.matrix-corner-a{left:23px}.matrix-corner-b{right:23px}
+body.matrix-intro-active{overflow:hidden}
+.footer-tools{display:inline-flex;align-items:center;gap:19px;flex-wrap:wrap}
+.matrix-replay{background:none;border:0;border-bottom:1px solid #4f926c;color:#8fefb5;padding:4px 0;font:700 10px/1.3 'Space Mono',monospace;letter-spacing:.06em;cursor:pointer}
+.matrix-replay:hover,.matrix-replay:focus-visible{color:#d5ffe1;border-bottom-color:#d5ffe1;outline-offset:4px}
+@media(max-width:600px){
+  .matrix-eyebrow{font-size:9px;letter-spacing:.14em}
+  .matrix-terminal-label{font-size:9px;letter-spacing:.12em}
+  .matrix-terminal-frame{padding:27px 17px}
+  .matrix-terminal-sub{font-size:8px;letter-spacing:.03em}
+  .matrix-corner{font-size:8px;opacity:.7}
+  .footer-tools{gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .matrix-intro,.matrix-skip{transition:none!important}
+  .matrix-cursor,.matrix-pulse{animation:none!important}
+}
