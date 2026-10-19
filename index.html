@@ -132,7 +132,7 @@
     <section class="section armory-section" id="armory" aria-labelledby="armory-title">
       <div class="section-head reveal"><div>
         <p class="eyebrow copper"><span class="section-mark">✦</span> CHAPTER III <span class="line-decoration"></span> EQUIPPED & READY</p>
-        <h2 id="armory-title">The <em>Armory</em></h2>
+        <h2 id="armory-title">The <em>Toolbox</em></h2>
         <p class="section-intro">The tools, languages, and systems I carry into every new adventure.</p>
       </div></div>
       <div class="armory-grid" id="armory-grid"></div>
@@ -149,16 +149,36 @@
 
   <footer class="site-footer"><span><img src="assets/crest.svg" width="25" height="25" alt="" /> <span id="footer-site-name">HUNTER'S CODEX</span></span><span>HANDCRAFTED WITH CODE & CURIOSITY <span aria-hidden="true">✦</span> <span id="copyright-year">2026</span></span><a href="#home">RETURN TO CAMP ↑</a></footer>
 
-  <dialog class="quest-modal" id="quest-modal" aria-labelledby="dialog-title" aria-describedby="dialog-description">
-    <button type="button" class="modal-close" id="modal-close" aria-label="Close quest details">✕</button>
-    <div class="modal-topline">GUILD FIELD REPORT <span id="dialog-index">NO. 001</span></div>
-    <div class="modal-icon" id="dialog-symbol" aria-hidden="true">✦</div>
-    <p class="eyebrow copper" id="dialog-category">QUEST DETAILS</p>
-    <h2 id="dialog-title">Quest Title</h2>
-    <p id="dialog-description">Quest description.</p>
-    <h3>TOOLS & EQUIPMENT</h3><div class="modal-tags" id="dialog-tags"></div>
-    <div class="modal-action" id="dialog-action"></div>
-    <p class="modal-caption">✥ FIELD REPORT COMPLETE ✥</p>
+  <dialog class="journal-modal" id="quest-modal" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close journal entry">✕</button>
+    <div class="journal-shell">
+      <div class="journal-ribbon" aria-hidden="true"></div>
+      <div class="journal-spread">
+        <section class="journal-page journal-page-left">
+          <div class="journal-page-inner">
+            <p class="journal-kicker" id="dialog-kind">FIELD DOSSIER</p>
+            <div class="journal-illustration" id="dialog-illustration" aria-hidden="true"></div>
+            <div class="journal-stamp-row">
+              <span class="journal-stamp" id="dialog-index">NO. 001</span>
+              <span class="journal-stamp is-secondary" id="dialog-badge">QUEST</span>
+            </div>
+            <p class="eyebrow copper" id="dialog-category">QUEST DETAILS</p>
+            <h2 id="dialog-title">Quest Title</h2>
+            <p class="journal-summary" id="dialog-summary">Quest summary.</p>
+          </div>
+        </section>
+        <section class="journal-page journal-page-right">
+          <div class="journal-page-inner">
+            <div class="modal-topline">ARCHIVIST'S NOTES <span id="dialog-symbol">✦</span></div>
+            <p id="dialog-description">Quest description.</p>
+            <h3 id="dialog-tags-heading">TOOLS &amp; EQUIPMENT</h3>
+            <div class="modal-tags" id="dialog-tags"></div>
+            <div class="modal-action" id="dialog-action"></div>
+            <p class="modal-caption">✥ ENTRY SEALED IN THE GUILD JOURNAL ✥</p>
+          </div>
+        </section>
+      </div>
+    </div>
   </dialog>
 </body>
 </html>

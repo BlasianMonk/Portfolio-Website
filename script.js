@@ -1,9 +1,5 @@
 'use strict';
 
-// Project/profile content is kept in content.js — not here.
-// You can edit it using editor.html (no coding necessary).
-// Keep the rest of the site working even when an old editor exported a string
-// for project tools, or the content file is missing / malformed.
 function safeText(value, fallback = '') {
   return typeof value === 'string' || typeof value === 'number' ? String(value) : fallback;
 }
@@ -37,12 +33,11 @@ function normalizePortfolio(data) {
   return profile;
 }
 const PORTFOLIO = normalizePortfolio(window.SITE_CONTENT);
-
 const ART = {
-  server: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="serverGrid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#bdd4b2" stroke-opacity=".09"/></pattern></defs><rect width="550" height="190" fill="url(#serverGrid)"/><circle cx="280" cy="90" r="144" fill="none" stroke="#c4bc8c" opacity=".11"/><circle cx="280" cy="90" r="111" fill="none" stroke="#c4bc8c" opacity=".16" stroke-dasharray="3 7"/><path d="M0 148 90 109 155 130 234 99 348 126 440 100 550 139V190H0Z" fill="#17312c" opacity=".6"/><rect x="210" y="22" width="137" height="150" rx="4" fill="#152a29" stroke="#c1aa7b" stroke-width="2"/><rect x="221" y="35" width="115" height="28" rx="2" fill="#3f5650" stroke="#859481"/><rect x="221" y="72" width="115" height="28" rx="2" fill="#3f5650" stroke="#859481"/><rect x="221" y="109" width="115" height="28" rx="2" fill="#3f5650" stroke="#859481"/><g fill="#d0b878"><circle cx="233" cy="49" r="4"/><circle cx="233" cy="86" r="4"/><circle cx="233" cy="123" r="4"/></g><path d="M248 49h74m-74 37h74m-74 37h74" stroke="#bbc7a2" opacity=".6" stroke-width="3" stroke-dasharray="12 7"/><path d="M280 137v35m-21 0h42" stroke="#b7a077" stroke-width="2"/><g stroke="#dac897" fill="none" opacity=".47"><path d="M210 55h-52v-29h-30M347 83h52v40h35M210 124h-48v29h-32"/><circle cx="127" cy="26" r="5"/><circle cx="435" cy="123" r="5"/><circle cx="129" cy="153" r="5"/></g></svg>`,
-  hook: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="hookGrid" width="31" height="31" patternUnits="userSpaceOnUse"><path d="M31 0H0V31" fill="none" stroke="#cedac4" stroke-opacity=".09"/></pattern></defs><rect width="550" height="190" fill="url(#hookGrid)"/><g stroke="#b9b49a" fill="none" opacity=".23"><circle cx="278" cy="95" r="89" stroke-dasharray="4 9"/><circle cx="278" cy="95" r="73"/><path d="M278 3v184M180 95h196"/></g><path d="M75 177q108-14 135-71t82-64" stroke="#d9c38e" stroke-width="3" stroke-dasharray="6 7" fill="none"/><g transform="translate(285 95) rotate(25)"><path d="M-9-61-9 34q-43 7-40 36 4 29 43 18M10-61V34q43 7 40 36-4 29-43 18" fill="none" stroke="#d7c7a6" stroke-width="10" stroke-linecap="round"/><path d="M-10-61 0-79 10-61ZM-6 39 0 48 6 39" fill="#b8935f"/><path d="M-48 87-62 76l13-13M49 87 62 76 49 63" fill="none" stroke="#d7c7a6" stroke-width="8" stroke-linecap="round"/></g><g stroke="#d1ad70" opacity=".5"><path d="M110 23h39M130 11v26M416 146h39M435 126v39"/></g></svg>`,
-  web: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="#d3c09a" fill="none" opacity=".18"><circle cx="274" cy="95" r="98"/><circle cx="274" cy="95" r="116" stroke-dasharray="4 9"/><path d="M0 30h550M0 159h550"/></g><rect x="145" y="28" width="263" height="137" rx="3" fill="#1c312e" stroke="#e2c591" stroke-width="2"/><rect x="157" y="40" width="239" height="17" fill="#6b755e"/><g fill="#e0c58e"><circle cx="168" cy="48" r="3"/><circle cx="181" cy="48" r="3"/><circle cx="194" cy="48" r="3"/></g><path d="M181 134 238 80l29 31 35-44 76 67Z" fill="#81917c" opacity=".4"/><path d="m181 134 57-54 29 31 35-44 76 67" fill="none" stroke="#ddbe81" stroke-width="2"/><path d="M196 146h148M350 146h29" stroke="#ebcea1" stroke-opacity=".5" stroke-width="3"/><path d="M122 98h-42m364-40h37m-54 93h62" stroke="#b9a67b" opacity=".6"/></svg>`,
-  team: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="teamGrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#cbd2c0" stroke-opacity=".07"/></pattern></defs><rect width="550" height="190" fill="url(#teamGrid)"/><circle cx="274" cy="98" r="114" fill="none" stroke="#cdbd94" opacity=".1"/><g stroke="#b8bb9d" stroke-width="3" fill="none" opacity=".8"><path d="M274 93 170 49M274 93 383 52M274 93 165 150M274 93 389 144"/></g><g><rect x="231" y="62" width="86" height="67" rx="4" fill="#354b41" stroke="#d5bc8a" stroke-width="2"/><path d="m247 100 13 11 29-32" fill="none" stroke="#e7cea0" stroke-width="5"/><rect x="118" y="23" width="85" height="44" rx="2" fill="#24362e" stroke="#bdac82"/><rect x="348" y="26" width="85" height="44" rx="2" fill="#24362e" stroke="#bdac82"/><rect x="111" y="130" width="90" height="40" rx="2" fill="#24362e" stroke="#bdac82"/><rect x="353" y="127" width="90" height="40" rx="2" fill="#24362e" stroke="#bdac82"/></g><g stroke="#d8c693" stroke-width="3" opacity=".6"><path d="M133 38h48M133 50h33M361 43h51M361 54h32M124 145h62M124 155h45M365 143h64M365 155h43"/></g></svg>`
+  server: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="srvBg" x1="0" x2="1"><stop offset="0" stop-color="#4b3929"/><stop offset="1" stop-color="#6e5134"/></linearGradient></defs><rect width="550" height="190" fill="url(#srvBg)"/><path d="M0 149c52-30 115-42 186-30 65 10 112-21 169-21 66 0 123 18 195 42v41H0Z" fill="#241a12" opacity=".55"/><path d="M280 20 331 43v27h-22v87c0 12-10 22-22 22h-46c-12 0-22-10-22-22V70h-22V43Z" fill="#2e241b" stroke="#e0c18f" stroke-width="4"/><rect x="236" y="66" width="88" height="84" rx="8" fill="#4b6253" stroke="#d8bc8c" stroke-width="3"/><path d="M252 85h56M252 108h56M252 131h56" stroke="#ebdcb7" stroke-width="4" stroke-linecap="round" opacity=".7"/><g fill="#e8cb94"><circle cx="247" cy="85" r="4"/><circle cx="247" cy="108" r="4"/><circle cx="247" cy="131" r="4"/></g><path d="M161 154h228" stroke="#d2b27c" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10" opacity=".6"/><g stroke="#e6d3ab" stroke-opacity=".35" fill="none"><circle cx="117" cy="56" r="18"/><circle cx="429" cy="46" r="12"/><path d="M92 56h50M117 31v50M412 46h34M429 29v34"/></g></svg>`,
+  hook: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="550" height="190" fill="#5b432e"/><path d="M0 160h550" stroke="#e4c896" stroke-width="2" opacity=".25"/><g stroke="#e9d5a7" fill="none" opacity=".45"><circle cx="274" cy="95" r="88"/><circle cx="274" cy="95" r="112" stroke-dasharray="4 9"/></g><path d="M108 153c97-25 147-73 211-116" stroke="#e0c28c" stroke-width="3" stroke-dasharray="7 8" fill="none"/><g transform="translate(290 95) rotate(24)"><path d="M-9-70V38c-34 5-49 18-49 37 0 24 19 34 42 26M9-70V38c34 5 49 18 49 37 0 24-19 34-42 26" stroke="#eddcb6" stroke-width="11" stroke-linecap="round"/><path d="M-9-70 0-87 9-70ZM-7 44 0 54 7 44" fill="#be8b58" stroke="none"/><path d="M-55 95-69 82l13-14M55 95 69 82 56 68" stroke="#eddcb6" stroke-width="8" stroke-linecap="round"/></g><path d="M413 35q18 4 26 18-17 5-31-3z" fill="#e7ca93" opacity=".7"/><path d="M145 42q-7 13-25 18 2-20 19-29z" fill="#e7ca93" opacity=".55"/></svg>`,
+  web: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="550" height="190" fill="#70523a"/><path d="M47 28h456v134H47z" fill="#2d2118" stroke="#e3c993" stroke-width="4"/><path d="M68 47h414v95H68z" fill="#f1e2be" opacity=".12" stroke="#d8bc8a"/><path d="M95 64h120M95 83h173M95 102h129M95 121h165" stroke="#ead9b4" stroke-width="4" stroke-linecap="round" opacity=".65"/><path d="m292 116 34-41 30 23 48-47 51 56" fill="none" stroke="#efcf92" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="355" cy="65" r="10" fill="#efcf92" opacity=".7"/><path d="M47 157h456" stroke="#e4c896" stroke-width="3" opacity=".35"/><g stroke="#e2cfab" stroke-opacity=".35" fill="none"><path d="M20 34h40M490 35h41M265 20v31"/></g></svg>`,
+  team: `<svg viewBox="0 0 550 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="550" height="190" fill="#624530"/><path d="M0 150c76-45 146-59 214-43 43 10 82 7 116-12 41-22 105-20 220 16v79H0Z" fill="#2e221a" opacity=".48"/><g fill="#f1deba" opacity=".35"><circle cx="274" cy="52" r="16"/><circle cx="192" cy="91" r="12"/><circle cx="356" cy="91" r="12"/><circle cx="135" cy="133" r="12"/><circle cx="414" cy="133" r="12"/></g><g stroke="#e2ca99" stroke-width="4" stroke-linecap="round"><path d="M274 52 192 91 135 133M274 52 356 91 414 133M192 91h164"/></g><path d="M238 43h72v29h-72z" fill="#3e2d21" stroke="#e1c38e" stroke-width="3"/><path d="M179 82h26v19h-26zm166 0h26v19h-26zM122 123h26v19h-26zm279 0h26v19h-26z" fill="#3e2d21" stroke="#e1c38e" stroke-width="3"/></svg>`
 };
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -54,35 +49,34 @@ const modalClose = $('#modal-close');
 function escapeHtml(text) {
   return String(text).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 }
-
-function safeProjectImage(project) {
-  // Explicit images are optional. Local images should be in assets/.
+function isProjectImageSource(image) {
+  return /^(assets\/[\w./ ()-]+|https:\/\/[^\s<>"']+|data:image\/[a-zA-Z0-9.+-]+;base64,[A-Za-z0-9+/=\n\r]+)$/i.test(image) && !image.includes('..');
+}
+function safeProjectImageMarkup(project) {
   const image = String(project.image || '').trim();
-  if (/^(assets\/[\w./ ()-]+|https:\/\/[^\s<>\"\']+)$/i.test(image) && !image.includes('..')) {
+  if (isProjectImageSource(image)) {
     return `<img class="quest-image" src="${escapeHtml(image)}" alt="" loading="lazy" />`;
   }
   return ART[project.art] || ART.web;
 }
-
 function renderProjects() {
   projectGrid.innerHTML = PORTFOLIO.projects.map((project, index) => `
-    <article class="quest-card" data-type="${escapeHtml(project.type)}">
+    <article class="quest-card reveal is-visible" data-type="${escapeHtml(project.type)}">
       <div class="quest-art quest-art--${escapeHtml(project.art)}" aria-hidden="true">
-        ${safeProjectImage(project)}
+        ${safeProjectImageMarkup(project)}
         <span class="quest-rank">${escapeHtml(project.rank)}</span>
         <span class="quest-status">${escapeHtml(project.status)}</span>
       </div>
       <div class="quest-body">
-        <div class="quest-meta">✦ <span>QUEST ${String(index + 1).padStart(2, '0')}</span> / ${escapeHtml(project.category)}</div>
+        <div class="quest-meta">✦ <span>ENTRY ${String(index + 1).padStart(2, '0')}</span> / ${escapeHtml(project.category)}</div>
         <h3>${escapeHtml(project.title)}</h3>
         <p class="quest-description">${escapeHtml(project.summary)}</p>
         <div class="quest-tools">${(project.tools || []).slice(0, 3).map(tool => `<span>${escapeHtml(tool)}</span>`).join('')}</div>
-        <button type="button" class="quest-inspect" data-project="${escapeHtml(project.id)}" aria-label="Inspect ${escapeHtml(project.title)}"><span>INSPECT QUEST</span><span aria-hidden="true">↗</span></button>
+        <button type="button" class="quest-inspect" data-project="${escapeHtml(project.id)}" aria-label="Open journal entry for ${escapeHtml(project.title)}"><span>OPEN JOURNAL ENTRY</span><span aria-hidden="true">↗</span></button>
       </div>
     </article>`).join('');
   updateFilter('all');
 }
-
 function updateFilter(type) {
   let visible = 0;
   $$('.quest-card').forEach(card => {
@@ -99,36 +93,78 @@ function updateFilter(type) {
   const total = $('.filter-button[data-filter="all"] span');
   if (total) total.textContent = String(PORTFOLIO.projects.length).padStart(2, '0');
 }
-
-function openProject(id) {
-  const project = PORTFOLIO.projects.find(item => item.id === id);
-  if (!project) return;
-  $('#dialog-index').textContent = `NO. ${String(PORTFOLIO.projects.indexOf(project) + 1).padStart(3, '0')}`;
-  $('#dialog-symbol').textContent = project.symbol;
-  $('#dialog-category').textContent = project.category;
-  $('#dialog-title').textContent = project.title;
-  $('#dialog-description').textContent = project.details;
-  $('#dialog-tags').replaceChildren(...(project.tools || []).map(tool => {
-    const badge = document.createElement('span');
-    badge.textContent = tool;
-    return badge;
+function buildProjectAction(project) {
+  if (!project.link || !/^https:\/\//i.test(project.link)) return '';
+  return `<a href="${escapeHtml(project.link)}" target="_blank" rel="noreferrer">View related link ↗</a>`;
+}
+function openJournalEntry(payload) {
+  if (!dialog) return;
+  $('#dialog-kind').textContent = payload.kind || 'FIELD DOSSIER';
+  $('#dialog-index').textContent = payload.index || 'NO. 001';
+  $('#dialog-badge').textContent = payload.badge || 'ARCHIVE';
+  $('#dialog-symbol').textContent = payload.symbol || '✦';
+  $('#dialog-category').textContent = payload.category || '';
+  $('#dialog-title').textContent = payload.title || '';
+  $('#dialog-summary').textContent = payload.summary || '';
+  $('#dialog-description').textContent = payload.details || '';
+  $('#dialog-tags-heading').textContent = payload.tagsHeading || 'TOOLS & EQUIPMENT';
+  const tags = $('#dialog-tags');
+  tags.replaceChildren(...(payload.tags || []).map(tool => {
+    const pill = document.createElement('span');
+    pill.textContent = tool;
+    return pill;
   }));
   const action = $('#dialog-action');
-  action.replaceChildren();
-  if (/^https:\/\//i.test(project.link)) {
-    const a = document.createElement('a');
-    a.href = project.link;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    a.textContent = 'OPEN PROJECT ↗';
-    action.append(a);
-  }
+  action.innerHTML = payload.actionHtml || '';
+  action.hidden = !payload.actionHtml;
+  $('#dialog-illustration').innerHTML = payload.illustration || '';
+  dialog.dataset.entryType = payload.entryType || 'quest';
+  dialog.classList.remove('is-opening');
+  void dialog.offsetWidth;
+  dialog.classList.add('is-opening');
   if (typeof dialog.showModal === 'function') {
     dialog.showModal();
     document.body.classList.add('modal-open');
   }
 }
-
+function openProject(id) {
+  const project = PORTFOLIO.projects.find(item => item.id === id);
+  if (!project) return;
+  openJournalEntry({
+    kind: 'QUEST DOSSIER',
+    index: `ENTRY ${String(PORTFOLIO.projects.indexOf(project) + 1).padStart(2, '0')}`,
+    badge: project.status || 'QUEST',
+    symbol: project.symbol,
+    category: project.category,
+    title: project.title,
+    summary: project.summary,
+    details: project.details,
+    tagsHeading: 'TOOLS & EQUIPMENT',
+    tags: project.tools || [],
+    actionHtml: buildProjectAction(project),
+    illustration: safeProjectImageMarkup(project),
+    entryType: 'quest'
+  });
+}
+function openSkill(index) {
+  const skill = PORTFOLIO.skills[index];
+  if (!skill) return;
+  openJournalEntry({
+    kind: 'LOADOUT ENTRY',
+    index: `LOADOUT ${String(index + 1).padStart(2, '0')}`,
+    badge: 'TOOLBOX',
+    symbol: skill.symbol || '✦',
+    category: 'ARMORY CATALOGUE',
+    title: skill.title || 'Untitled Loadout',
+    summary: skill.description || 'A collection of tools and techniques.',
+    details: skill.description || 'A collection of tools and techniques.',
+    tagsHeading: 'TOOLS ON THIS PAGE',
+    tags: skill.items || [],
+    actionHtml: '',
+    illustration: `<div class="journal-sigil" aria-hidden="true"><span>${escapeHtml(skill.symbol || '✦')}</span></div>`,
+    entryType: 'toolbox'
+  });
+}
 function configureIdentity() {
   const binding = {
     '#profile-name': 'name', '#profile-role': 'role',
@@ -150,10 +186,11 @@ function configureIdentity() {
   brand.replaceChildren();
   brand.append(document.createTextNode(words.join(' ') + (words.length ? ' ' : '')));
   const accent = document.createElement('span'); accent.textContent = finalWord;
-  const subhead = document.createElement('small'); subhead.textContent = 'THE DEVELOPER’S GUILD';
+  const subhead = document.createElement('small'); subhead.textContent = 'THE ARCHIVIST’S JOURNAL';
   brand.append(accent, subhead);
   $('#footer-site-name').textContent = brandName;
   brand.closest('a').setAttribute('aria-label', `${brandName}, return to top`);
+
   const highlights = $('#hunter-highlights');
   highlights.replaceChildren(...(PORTFOLIO.highlights || []).map(entry => {
     const wrap = document.createElement('div');
@@ -163,12 +200,18 @@ function configureIdentity() {
     const small = document.createElement('small'); small.textContent = entry.description || '';
     words.append(strong, small); wrap.append(symbol, words); return wrap;
   }));
+
   $('#armory-grid').innerHTML = (PORTFOLIO.skills || []).map((skill, index) => `
-    <article class="armory-card reveal is-visible"><div class="armory-icon" aria-hidden="true">${escapeHtml(skill.symbol || '✦')}</div>
-    <span class="armory-index">LOADOUT // ${String(index + 1).padStart(2, '0')}</span>
-    <h3>${escapeHtml(skill.title || '')}</h3><p>${escapeHtml(skill.description || '')}</p>
-    <div class="skill-tags">${(skill.items || []).map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div></article>
+    <article class="armory-card reveal is-visible">
+      <div class="armory-icon" aria-hidden="true">${escapeHtml(skill.symbol || '✦')}</div>
+      <span class="armory-index">LOADOUT // ${String(index + 1).padStart(2, '0')}</span>
+      <h3>${escapeHtml(skill.title || '')}</h3>
+      <p>${escapeHtml(skill.description || '')}</p>
+      <div class="skill-tags">${(skill.items || []).map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>
+      <button type="button" class="armory-inspect" data-skill-index="${index}"><span>TURN TO THIS PAGE</span><span aria-hidden="true">↗</span></button>
+    </article>
   `).join('');
+
   $('#copyright-year').textContent = String(new Date().getFullYear());
   const linkedin = $('#linkedin-link');
   if (/^https:\/\//i.test(PORTFOLIO.linkedin)) linkedin.href = PORTFOLIO.linkedin; else linkedin.hidden = true;
@@ -186,35 +229,25 @@ function configureIdentity() {
     });
   }
 }
-
-/* Fit editor-customized title lines to the inner parchment width.
-   Both lines receive the same size to keep the old-world title balanced.
-   When a very long heading cannot fit legibly, it wraps instead. */
 function fitHeroHeadline() {
   const heading = $('#hero-title');
   if (!heading) return;
   const lines = [$('#hero-line-one'), $('#hero-line-two')].filter(Boolean);
-  const availableWidth = heading.clientWidth - 8; // A little breathing room by the ink border.
+  const availableWidth = heading.clientWidth - 8;
   if (availableWidth <= 0) return;
-
-  // Reset previous calculations before reading the responsive stylesheet.
   lines.forEach(line => { line.style.fontSize = ''; line.style.whiteSpace = 'nowrap'; });
   const baseSize = parseFloat(getComputedStyle(heading).fontSize);
   if (!Number.isFinite(baseSize)) return;
   const fits = () => lines.every(line => line.scrollWidth <= availableWidth);
   if (fits()) return;
-
   const minimum = Math.min(baseSize, window.innerWidth <= 680 ? 33 : 36);
   const setSize = size => lines.forEach(line => { line.style.fontSize = `${size}px`; });
   setSize(minimum);
   if (!fits()) {
-    // Small screens and especially long edits should wrap, not overflow.
     lines.forEach(line => { line.style.whiteSpace = 'normal'; });
     return;
   }
-
-  let low = minimum;
-  let high = baseSize;
+  let low = minimum; let high = baseSize;
   for (let i = 0; i < 11; i++) {
     const middle = (low + high) / 2;
     setSize(middle);
@@ -222,7 +255,6 @@ function fitHeroHeadline() {
   }
   setSize(Math.max(minimum, Math.floor(low - 1)));
 }
-
 function setupHeroHeadlineSizing() {
   let pendingFrame = 0;
   const refresh = () => {
@@ -231,21 +263,18 @@ function setupHeroHeadlineSizing() {
   };
   fitHeroHeadline();
   window.addEventListener('resize', refresh, { passive: true });
-  // Web fonts may arrive after JavaScript has calculated initial text widths.
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh).catch(() => {});
 }
-
 function makeFireflies() {
   const container = $('#fireflies');
   const places = [[7,62],[13,77],[18,46],[25,70],[35,79],[42,59],[52,84],[62,73],[71,55],[79,79],[88,61],[94,74],[23,29],[81,33],[61,18]];
   container.innerHTML = places.map(([x, y], i) => `<span class="firefly" style="left:${x}%;top:${y}%;--delay:-${(i * 1.6).toFixed(1)}s;--speed:${6 + (i % 5) * 1.6}s"></span>`).join('');
 }
-
 function setupEffects() {
   const button = $('#effects-toggle');
   const preferenceKey = 'hunters-codex-reduced-effects';
   let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  try { if (localStorage.getItem(preferenceKey) !== null) reduced = localStorage.getItem(preferenceKey) === 'true'; } catch (_) { /* Storage might be blocked. */ }
+  try { if (localStorage.getItem(preferenceKey) !== null) reduced = localStorage.getItem(preferenceKey) === 'true'; } catch (_) {}
   const apply = () => {
     document.body.classList.toggle('effects-off', reduced);
     button.setAttribute('aria-pressed', String(reduced));
@@ -255,11 +284,10 @@ function setupEffects() {
   button.addEventListener('click', () => {
     reduced = !reduced;
     apply();
-    try { localStorage.setItem(preferenceKey, String(reduced)); } catch (_) { /* Safe fallback. */ }
+    try { localStorage.setItem(preferenceKey, String(reduced)); } catch (_) {}
   });
   apply();
 }
-
 function setupNavigation() {
   const header = $('.site-header');
   const progress = $('#scroll-progress');
@@ -295,7 +323,6 @@ function setupNavigation() {
     }
   }));
 }
-
 function setupReveals() {
   if (!('IntersectionObserver' in window)) {
     $$('.reveal').forEach(element => element.classList.add('is-visible'));
@@ -309,7 +336,6 @@ function setupReveals() {
   }, { threshold: 0.07, rootMargin: '0px 0px 30px 0px' });
   $$('.reveal').forEach(element => observer.observe(element));
 }
-
 function initialize() {
   if (!window.SITE_CONTENT || !Array.isArray(window.SITE_CONTENT.projects)) {
     const warning = document.createElement('div');
@@ -331,9 +357,15 @@ function initialize() {
     const button = event.target.closest('[data-project]');
     if (button) openProject(button.dataset.project);
   });
-  modalClose.addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
-  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  $('#armory-grid')?.addEventListener('click', event => {
+    const button = event.target.closest('[data-skill-index]');
+    if (button) openSkill(Number(button.dataset.skillIndex));
+  });
+  modalClose?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    dialog.classList.remove('is-opening');
+  });
+  dialog?.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
 }
-
 initialize();
