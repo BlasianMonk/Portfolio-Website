@@ -44,6 +44,7 @@ window.SITE_CONTENT = {
         "JavaScript",
         "HTML5",
         "CSS3",
+        "Lua",
         "Git"
       ]
     },
