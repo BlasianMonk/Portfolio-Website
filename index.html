@@ -2,110 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080816" />
-  <meta name="description" content="A synthwave-inspired interactive portfolio of software development, game systems and homelab projects." />
-  <title>NEON // ARCHIVE — Developer Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="assets/neon-mark.svg" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#14252e" />
+  <meta name="description" content="Explore a playful 8-bit portfolio world: game projects, software development, career experience, systems and skills." />
+  <title>Dante's World · A Pixel Adventure Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="matrix-intro.css" />
-  <script src="content.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="matrix-intro.js" defer></script>
+  <script defer src="content.js"></script>
+  <script defer src="game.js"></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="scanline" aria-hidden="true"></div>
-  <!-- Optional Matrix-style boot animation. Content and timing are editable in editor.html. -->
-  <div class="matrix-intro" id="matrix-intro" role="dialog" aria-modal="true" aria-label="Matrix-style portfolio introduction" tabindex="-1" hidden>
-    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
-    <div class="matrix-glow" aria-hidden="true"></div>
-    <div class="matrix-terminal">
-      <div class="matrix-eyebrow">[ SYSTEM BOOT / SECURE CHANNEL ]</div>
-      <div class="matrix-terminal-frame">
-        <span class="matrix-terminal-icon" aria-hidden="true">//</span>
-        <p class="matrix-terminal-label" id="matrix-intro-label">ESTABLISHING CONNECTION</p>
-        <h2 id="matrix-intro-title">ENTER THE GRID<span class="matrix-cursor">_</span></h2>
-        <p class="matrix-terminal-sub">ACCESSING THE DEVELOPER ARCHIVE <span class="matrix-pulse">●</span></p>
-        <div class="matrix-progress" aria-hidden="true"><span id="matrix-progress-bar"></span></div>
-        <div class="matrix-boot-status" id="matrix-boot-status" aria-live="off">DECRYPTING PORTFOLIO DATA...</div>
-      </div>
-    </div>
-    <span class="matrix-corner matrix-corner-a" aria-hidden="true">SYS.0x01</span>
-    <span class="matrix-corner matrix-corner-b" aria-hidden="true">01010100 / 01000101</span>
-  </div>
-  <header class="nav" id="top">
-    <a class="brand" href="#home" aria-label="Back to home"><img src="assets/neon-mark.svg" alt="" width="34" height="34" /><span id="brand-name">NEON<span class="brand-slash">//</span><b>ARCHIVE</b><small>THE DEVELOPER TERMINAL</small></span></a>
-    <nav class="desktop-links" aria-label="Main navigation"><a href="#missions">PROJECTS</a><a href="#profile">ABOUT</a><a href="#loadout">SKILLS</a><a href="#contact">CONTACT</a></nav>
-    <div class="nav-actions"><span class="online"><span class="online-dot"></span> SYSTEM ONLINE</span><button class="nav-menu-btn" id="nav-menu-btn" aria-controls="mobile-menu" aria-expanded="false" type="button">MENU <span>☰</span></button></div>
+  <a class="skip-link" href="#quick-links">Skip game and browse content</a>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <header class="top-bar">
+    <a href="#top" class="brand" aria-label="Return to the start"><span class="brand-symbol" aria-hidden="true">✦</span><span><strong id="brand-title">DANTE'S WORLD</strong><small>INTERACTIVE PORTFOLIO / V 1.0</small></span></a>
+    <nav class="top-links" aria-label="Main navigation">
+      <a href="#game">THE WORLD</a><button type="button" id="open-map-top">TOWN MAP</button><a href="#quick-links">QUICK LINKS</a>
+    </nav>
+    <span class="online-chip"><span class="online-dot"></span>NOW EXPLORING</span>
   </header>
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="#missions">PROJECTS</a><a href="#profile">ABOUT</a><a href="#loadout">SKILLS</a><a href="#contact">CONTACT</a></nav>
-  <main id="main">
-    <section id="home" class="hero" aria-labelledby="hero-title">
-      <div class="hero-scene" aria-hidden="true"><img src="assets/synthwave-horizon.svg" alt="" /></div>
-      <div class="hero-haze" aria-hidden="true"></div>
-      <div class="hero-body">
-        <div class="hero-copy">
-          <p class="mono eyebrow"><span class="pink-square"></span> PORTFOLIO.EXE <span class="dim">/ VERSION 2.0</span></p>
-          <p class="hero-pretitle">Welcome to the digital frontier_</p>
-          <h1 id="hero-title"><span id="hero-line-one">BUILDING DIGITAL</span><strong id="hero-line-two">WORLDS.</strong></h1>
-          <p class="hero-subcopy" id="hero-intro">Building worlds, solving problems, and forging things that work.</p>
-          <div class="hero-buttons"><a class="button button-primary" href="#missions"><span>VIEW MY WORK</span><span>↗</span></a><a class="button button-outline" href="#profile">ABOUT THE DEVELOPER <span>→</span></a></div>
-          <div class="hero-specs"><div><span class="mono">FOCUS_01</span><strong>SOFTWARE</strong></div><div><span class="mono">FOCUS_02</span><strong>GAME DEV</strong></div><div><span class="mono">FOCUS_03</span><strong>SYSTEMS</strong></div></div>
-        </div>
-        <div class="hero-decor" aria-hidden="true"><span class="hero-decor-top">[ SYNTHETIC DREAMS / REAL WORLD CODE ]</span><span class="hero-decor-cross">✳</span><span class="hero-decor-bottom">CH 00 · THE BEGINNING</span></div>
+
+  <main id="top">
+    <section class="page-intro" aria-label="Introduction">
+      <div><span class="section-flag"><span aria-hidden="true">◆</span> HI THERE, TRAVELER!</span>
+        <h1 id="page-heading">A PORTFOLIO <em>YOU CAN PLAY.</em></h1>
+        <p>Explore my little pixel world. Visit buildings, talk to characters, and uncover the things I've built along the way.</p>
       </div>
-      <a href="#missions" class="hero-scroll mono">SCROLL TO EXPLORE <span>↓</span></a>
-      <div class="hero-edgeline" aria-hidden="true"></div>
+      <div class="intro-side" aria-hidden="true"><span class="badge-mark">★</span><span>LEVEL 01<br>CURIOUS EXPLORER</span></div>
     </section>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-inner"><span>◈ &nbsp; SYSTEMS ONLINE</span><span>◈ &nbsp; IDEAS IN MOTION</span><span>◈ &nbsp; BUILD • LEARN • REPEAT</span><span>◈ &nbsp; SOFTWARE / GAMES / INFRASTRUCTURE</span><span>◈ &nbsp; SYSTEMS ONLINE</span></div></div>
-
-    <section class="section mission-section" id="missions" aria-labelledby="mission-heading">
-      <div class="section-inner">
-        <div class="heading-row"><div><p class="mono overline">[ 01 / THE PROJECT LOG ]</p><h2 id="mission-heading">MISSION <em>ARCHIVE<span class="blink">_</span></em></h2><p class="section-description">Selected experiments, systems and things I've built. Choose a mission to open its dossier.</p></div><div class="heading-right mono">DATABASE <span class="status-cyan">CONNECTED</span><span class="line"></span>ACCESS GRANTED</div></div>
-
-        <div class="archive-panel" id="available-panel" data-archive="available">
-          <div class="archive-title"><div><span class="archive-symbol">//</span><h3>ACTIVE MISSIONS</h3><small>PROJECTS IN PROGRESS &amp; FIELD NOTES</small></div><span class="archive-count mono" id="available-count">00 ENTRIES</span></div>
-          <div class="filters mono" id="available-filters" role="group" aria-label="Filter active projects"><button type="button" data-filter="all" class="active" aria-pressed="true">ALL</button><button type="button" data-filter="development" aria-pressed="false">CODE &amp; GAMES</button><button type="button" data-filter="systems" aria-pressed="false">SYSTEMS</button><button type="button" data-filter="other" aria-pressed="false">OTHER</button></div>
-          <div class="mission-grid" id="available-grid" aria-live="polite"></div>
-          <p class="empty" id="available-empty" hidden>No active missions in this category. Check another channel.</p>
-          <div class="pagination" aria-label="Active mission pages"><button type="button" id="available-prev">← PREV PAGE</button><span id="available-page" class="mono">PAGE 01 / 01</span><button type="button" id="available-next">NEXT PAGE →</button></div>
+    <section class="adventure-layout" id="game" aria-label="Playable portfolio adventure">
+      <div class="play-area">
+        <div class="game-topline"><div><span class="pixel-light"></span><strong>PIXELWOOD VILLAGE</strong><span class="light-label">OVERWORLD / DAY 01</span></div><span class="game-topline-right">8-BIT MODE ●</span></div>
+        <div class="screen-frame">
+          <canvas id="world" width="672" height="448" tabindex="0" aria-label="Playable top-down village. Use the arrow keys or WASD to move, E or Enter to interact; town-map and quick-travel buttons are also available.">Your browser does not support canvas. Use the quick links below.</canvas>
+          <div class="corner-label upper-left" aria-hidden="true">WORLD 01 / 01</div>
+          <div class="corner-label upper-right" id="coord-readout" aria-hidden="true">X:27 Y:19</div>
+          <div class="screen-prompt" id="screen-prompt" aria-live="polite"><span>✦</span> EXPLORE THE TOWN</div>
+          <div class="start-overlay" id="start-overlay">
+            <div class="welcome-paper">
+              <span class="welcome-ornament" aria-hidden="true">★　✦　★</span>
+              <p class="tiny-heading">ADVENTURE MODE</p>
+              <h2 id="welcome-title">A NEW ADVENTURE AWAITS!</h2>
+              <p id="welcome-message">Walk around the town to discover projects and meet the characters.</p>
+              <button type="button" class="pixel-button primary" id="begin-game">▶ START EXPLORING</button>
+              <small>WASD / ARROWS TO MOVE · E TO TALK</small>
+            </div>
+          </div>
+          <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
         </div>
-
-        <div class="archive-panel completed-panel" id="completed-panel" data-archive="completed">
-          <div class="archive-title"><div><span class="archive-symbol cyan-symbol">✓</span><h3>COMPLETED MISSIONS</h3><small>DEPLOYED SYSTEMS &amp; FINISHED PROJECTS</small></div><span class="archive-count mono" id="completed-count">00 ENTRIES</span></div>
-          <div class="mission-grid" id="completed-grid" aria-live="polite"></div>
-          <p class="empty" id="completed-empty" hidden>No completed projects listed yet.</p>
-          <div class="pagination" aria-label="Completed mission pages"><button type="button" id="completed-prev">← PREV PAGE</button><span id="completed-page" class="mono">PAGE 01 / 01</span><button type="button" id="completed-next">NEXT PAGE →</button></div>
+        <div class="game-toolbar">
+          <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE</span><span><kbd>E</kbd> INTERACT</span><span><kbd>SHIFT</kbd> RUN</span>
+          <div class="toolbar-buttons"><button type="button" id="interact-button">✦ TALK / ENTER</button><button type="button" id="open-map">▦ MAP</button></div>
         </div>
+        <div class="touch-controls" aria-label="Touch game controls">
+          <div class="touch-dpad"><button type="button" data-dir="up" aria-label="Move up">▲</button><button type="button" data-dir="left" aria-label="Move left">◀</button><button type="button" data-dir="right" aria-label="Move right">▶</button><button type="button" data-dir="down" aria-label="Move down">▼</button></div>
+          <button type="button" class="touch-a" id="mobile-a" aria-label="Interact">A<span>TALK</span></button>
+          <button type="button" class="touch-map" id="mobile-map" aria-label="Open map">MAP</button>
+        </div>
+        <p class="mobile-hint">On touchscreens, use the D-pad or tap a place on the map to walk there.</p>
       </div>
+
+      <aside class="side-panel" aria-label="Game journal">
+        <div class="journal-head"><span class="pixel-star">✦</span><div><small>EXPLORER'S JOURNAL</small><h2>FIELD NOTES</h2></div><span class="journal-index">01</span></div>
+        <div class="character-card"><div class="sprite-portrait" aria-hidden="true"><canvas id="avatar-canvas" width="64" height="64"></canvas></div><div><small>PLAYING AS</small><strong id="side-name">DANTE SIN</strong><p id="side-role">DEVELOPER · BUILDER</p></div></div>
+        <div class="progress-heading"><span>WORLD DISCOVERED</span><b id="discovered-count">00 / 06</b></div><div class="progress-track"><div id="discovered-progress"></div></div>
+        <div class="journal-subhead">✦ PLACES TO VISIT</div>
+        <div class="travel-list" id="travel-list"></div>
+        <div class="journal-bottom"><span id="token-count">◇ 0 / 3 HIDDEN STARS</span><button type="button" id="help-button">? HELP</button></div>
+      </aside>
     </section>
 
-    <section class="section profile-section" id="profile" aria-labelledby="profile-heading">
-      <div class="section-inner">
-        <div class="heading-row"><div><p class="mono overline">[ 02 / PERSONNEL FILE ]</p><h2 id="profile-heading">BEHIND THE <em>SCREEN<span class="blink">_</span></em></h2></div><div class="heading-right mono">PROFILE VERIFIED <span class="status-cyan">●</span></div></div>
-        <div class="profile-layout">
-          <div class="profile-visual"><div class="profile-frame"><div class="frame-top mono"><span>CAM_01 / OPERATOR</span><span>REC <span class="red-dot">●</span></span></div><img src="assets/operative.svg" id="profile-portrait" alt="Futuristic avatar illustration" /><span class="frame-corner corner-1"></span><span class="frame-corner corner-2"></span></div><div class="profile-caption mono"><span>IDENTITY_01</span><strong id="profile-name">DEVELOPER</strong><span id="profile-role">Builder / Explorer</span></div></div>
-          <div class="profile-terminal"><div class="terminal-head mono"><span><span class="terminal-dot magenta"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span></span> <span>ABOUT_ME.TXT</span><span>◧</span></div><div class="terminal-content"><p class="mono tiny pink">&gt; WHO_AM_I</p><h3><span id="about-line-one">Curiosity is my</span><br /><em id="about-line-two">favorite weapon.</em></h3><p id="about-one"></p><p id="about-two"></p><div class="profile-facts"><div><span>STATUS</span><strong id="profile-status"></strong></div><div><span>AFFILIATION</span><strong id="profile-guild"></strong></div><div><span>EDUCATION</span><strong id="profile-education"></strong></div><div><span>SPECIALIZATION</span><strong id="profile-specialty"></strong></div></div><div id="profile-highlights" class="highlights"></div></div></div>
-        </div>
-      </div>
+    <section id="quick-links" class="quick-section" aria-labelledby="quick-title">
+      <div class="quick-head"><div><span class="section-flag">CAN'T STAY AND PLAY?</span><h2 id="quick-title">FAST <span>TRAVEL</span></h2></div><p>Every destination is one click away. No running through tall grass required.</p></div>
+      <div id="quick-grid" class="quick-grid"></div>
     </section>
 
-    <section class="section loadout-section" id="loadout" aria-labelledby="loadout-heading">
-      <div class="section-inner"><div class="heading-row"><div><p class="mono overline">[ 03 / TECH STACK ]</p><h2 id="loadout-heading">SYSTEM <em>LOADOUT<span class="blink">_</span></em></h2><p class="section-description">The languages, platforms and tools in my arsenal. Open a module to inspect the full stack.</p></div><div class="heading-right mono">MODULES LOADED <span class="status-cyan" id="skill-count">00</span></div></div><div class="loadout-grid" id="skill-grid"></div></div>
+    <section class="bottom-banner">
+      <div><span class="section-flag">YOU'VE REACHED THE END OF THE MAP</span><h2>THANKS FOR <span>EXPLORING!</span></h2><p>Want to build something together? The signal station is open.</p></div>
+      <button type="button" class="pixel-button secondary" id="contact-direct">✉ SAY HELLO</button>
     </section>
-
-    <section class="section network-section" id="network" aria-labelledby="network-heading"><div class="section-inner"><div class="heading-row"><div><p class="mono overline">[ 04 / DIGITAL TERRITORY ]</p><h2 id="network-heading">WORLD <em>MAP<span class="blink">_</span></em></h2><p class="section-description">A little window into the worlds and systems that power my curiosity.</p></div></div><div class="network-grid"><figure class="network-card"><div class="network-card-label mono">GRID_A / OPERATIONS HUB <span>01</span></div><img src="assets/cyber-city.svg" id="guild-image" alt="Retro-futuristic skyline representing the developer's operations hub" /><figcaption>THE OPERATIONS HUB <span>◈</span></figcaption></figure><figure class="network-card"><div class="network-card-label mono">GRID_B / NETWORK TOPOLOGY <span>02</span></div><img src="assets/network-map.svg" id="map-image" alt="Illustrated digital map and network topology" /><figcaption>CONNECTED SYSTEMS <span>◈</span></figcaption></figure></div></div></section>
-
-    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-inner"><div class="contact-panel"><span class="contact-ornament mono">[ TRANSMISSION CHANNEL / OPEN ]</span><span class="contact-glow" aria-hidden="true">✳</span><p class="mono overline">[ 05 / GET IN TOUCH ]</p><h2 id="contact-heading">LET'S BUILD<br /><em>SOMETHING NEW.</em></h2><p id="contact-intro"></p><div class="contact-actions"><a class="button button-primary" id="email-link" href="#contact">SEND TRANSMISSION ↗</a><a class="button button-outline" id="linkedin-link" href="#contact" target="_blank" rel="noopener noreferrer">LINKEDIN →</a></div><p class="mono contact-email" id="contact-help"></p><div class="contact-bottom mono"><span>END TRANSMISSION_</span><span>THANK YOU FOR VISITING</span></div></div></div></section>
   </main>
-  <footer class="footer"><span class="mono">© <span id="year"></span> <span id="footer-title">NEON // ARCHIVE</span></span><span class="mono">BUILT WITH <span class="pink">♥</span> &amp; VANILLA WEB TECH</span><span class="footer-tools"><button type="button" class="matrix-replay" id="matrix-replay">REPLAY INTRO ↻</button><a class="mono" href="#home" id="back-to-top">BACK TO TOP ↑</a></span></footer>
 
-  <dialog id="dossier" class="dossier" aria-labelledby="dossier-title"><div class="dossier-shell"><div class="dossier-top mono"><span>NEON_ARCHIVE / <span id="dossier-number">ENTRY 001</span></span><button id="dossier-close" aria-label="Close dossier" type="button">✕ CLOSE</button></div><div class="dossier-main"><div class="dossier-art" id="dossier-art"></div><div class="dossier-text"><p id="dossier-type" class="mono pink tiny">PROJECT REPORT</p><h2 id="dossier-title">MISSION NAME</h2><p id="dossier-summary" class="dossier-summary"></p><p id="dossier-details"></p><p class="mono pink tiny">TECHNOLOGIES / MODULES</p><div id="dossier-tags" class="tags"></div><div id="dossier-link"></div></div></div><div class="dossier-nav"><button id="dossier-prev" type="button">← PREVIOUS RECORD</button><span id="dossier-position" class="mono">01 / 04</span><button id="dossier-next" type="button">NEXT RECORD →</button></div></div></dialog>
+  <footer class="footer"><span>© <span id="copyright-year">2026</span> · <span id="footer-name">DANTE SIN</span></span><span>HANDCRAFTED PIXELS • REAL CODE • ZERO FRAMEWORKS</span><button id="return-top" type="button">↑ BACK TO TOP</button></footer>
+
+  <dialog class="info-dialog" id="info-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell"><div class="dialog-top"><span id="dialog-label">TOWN RECORD</span><button class="close-dialog" type="button" id="close-dialog" aria-label="Close panel">✕</button></div>
+      <div class="dialog-body"><h2 id="dialog-title">WELCOME</h2><div id="dialog-content"></div></div>
+      <div class="dialog-footer"><span>PRESS ESC TO RETURN TO THE WORLD</span><button type="button" id="dialog-done">← BACK TO TOWN</button></div></div>
+  </dialog>
+
+  <dialog class="map-dialog" id="map-dialog" aria-labelledby="map-title">
+    <div class="dialog-shell"><div class="dialog-top"><span>OVERWORLD ATLAS / 001</span><button type="button" class="close-dialog" id="close-map" aria-label="Close map">✕</button></div>
+      <div class="dialog-body"><h2 id="map-title">TOWN MAP <span>▦</span></h2><p class="map-blurb">Pick a destination to fast travel there, or close this menu to explore on foot.</p><div class="map-sketch" id="map-sketch" aria-hidden="true"></div><div class="map-places" id="map-places"></div></div>
+    </div>
+  </dialog>
+  <noscript><div class="noscript"><h2>JavaScript is needed to play the game</h2><p>This portfolio is an interactive RPG built with HTML, CSS and JavaScript. Enable JavaScript to explore the village. You can also download the <a href="assets/resume.pdf">résumé</a>.</p></div></noscript>
 </body>
 </html>

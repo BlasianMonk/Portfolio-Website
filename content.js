@@ -1,170 +1,251 @@
-/* Edited with Neon Studio. Open editor.html to change this content. */
-window.SITE_CONTENT = {
-  "siteTitle": "DANTE'S // ARCHIVE",
+/* Edited using Pixel Quest Creator (editor.html). */
+window.PORTFOLIO_DATA = {
+  "siteName": "DANTE'S WORLD",
+  "welcomeTitle": "A NEW ADVENTURE AWAITS!",
+  "welcomeText": "Explore a pixel village and discover my projects, code, career, and favorite experiments. Every building has a story.",
+  "tagline": "SOFTWARE DEVELOPER / GAME MAKER / SYSTEMS TINKERER",
   "name": "Dante Sin",
-  "role": "Developer · Builder · Explorer",
-  "heroLineOne": "BUILDING DIGITAL",
-  "heroLineTwo": "WORLDS.",
-  "heroIntro": "Software engineering, game systems, and a homelab full of experiments. Building useful things and learning with every iteration.",
-  "guild": "Independent Developer",
-  "education": "B.S. Computer Science · WGU (in progress)",
-  "specialty": "Code, Games & Infrastructure",
-  "status": "Always Learning",
-  "aboutLineOne": "Curiosity is my",
-  "aboutLineTwo": "favorite weapon.",
-  "aboutOne": "I enjoy the meeting point of software, systems, and creativity. From experimenting with game mechanics to building web interfaces and maintaining home services, I learn best by making things and improving them.",
-  "aboutTwo": "I'm pursuing a B.S. in Computer Science at Western Governors University while continuing to develop my skills through practical, self-directed projects.",
-  "highlights": [
-    {
-      "symbol": "◇",
-      "title": "Always experimenting",
-      "description": "Personal projects & prototypes"
-    },
-    {
-      "symbol": "✦",
-      "title": "Built from the ground up",
-      "description": "Homelab, infrastructure & dev tooling"
-    },
-    {
-      "symbol": "⌘",
-      "title": "Inspired by games",
-      "description": "Player-focused, interactive experiences"
-    }
-  ],
-  "skills": [
-    {
-      "symbol": "⌘",
-      "title": "Software & Games",
-      "description": "Making ideas playable, interactive, and useful.",
-      "items": [
-        "Unreal Engine",
-        "Unity",
-        "C++",
-        "C#",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "Lua",
-        "Git"
-      ]
-    },
-    {
-      "symbol": "▤",
-      "title": "Systems & Infrastructure",
-      "description": "Building, configuring, and maintaining the machinery behind the scenes.",
-      "items": [
-        "Proxmox",
-        "Linux",
-        "Debian",
-        "Docker",
-        "Networking",
-        "NAS"
-      ]
-    },
-    {
-      "symbol": "⚒",
-      "title": "Workflow & Collaboration",
-      "description": "Organizing complex work and making the development process smoother.",
-      "items": [
-        "Bitbucket",
-        "Jira",
-        "Confluence",
-        "Trello",
-        "Version Control"
-      ]
-    }
-  ],
+  "role": "Software Engineer · Game Developer · Tech Enthusiast",
+  "about": "I'm a developer who loves creating playful experiences and solving real-world problems. My work spans independent game development, software engineering, and hands-on infrastructure. I enjoy learning by building—and sharing what I learn along the way.",
+  "funFact": "Some of my favorite side quests happen in a homelab running Proxmox, Debian, Docker, Jellyfin, and self-hosted game servers.",
+  "currentQuest": "Pursuing a B.S. in Computer Science at Western Governors University.",
   "email": "dantesin100@gmail.com",
   "linkedin": "https://www.linkedin.com/in/dante-sin-1a2179161",
-  "contactIntro": "Have a role, project, or idea worth exploring? The guild hall is open.",
+  "github": "https://github.com/BlasianMonk",
+  "resume": "assets/resume.pdf",
+  "player": {
+    "shirt": "#e85e69",
+    "hair": "#372c3e",
+    "skin": "#eac39b",
+    "pants": "#323d60"
+  },
+  "colors": {
+    "accent": "#e9bf6a",
+    "secondary": "#84c9ab",
+    "panel": "#182935"
+  },
+  "locations": [
+    {
+      "id": "home",
+      "label": "Home Base",
+      "subtitle": "Who I am",
+      "description": "Meet the developer behind the adventure."
+    },
+    {
+      "id": "studio",
+      "label": "Game Studio",
+      "subtitle": "Projects & builds",
+      "description": "A gallery of projects, prototypes, and works in progress."
+    },
+    {
+      "id": "lab",
+      "label": "Systems Lab",
+      "subtitle": "Skills & homelab",
+      "description": "A workshop packed with tools and experiments."
+    },
+    {
+      "id": "career",
+      "label": "Career Hall",
+      "subtitle": "My experience",
+      "description": "Explore professional roles and collaborations."
+    },
+    {
+      "id": "academy",
+      "label": "CS Academy",
+      "subtitle": "Education & learning",
+      "description": "Studies, certifications, and lifelong learning."
+    },
+    {
+      "id": "contact",
+      "label": "Signal Station",
+      "subtitle": "Get in touch",
+      "description": "Send a message or visit my professional profile."
+    }
+  ],
+  "characters": [
+    {
+      "id": "guide",
+      "name": "Maple the Guide",
+      "line": "Welcome to the village! Wander near a building and press E. You can also use the travel list if you prefer shortcuts."
+    },
+    {
+      "id": "builder",
+      "name": "Patch the Mechanic",
+      "line": "The Systems Lab is always humming. Some days I'm fixing servers; other days I'm running game nights!"
+    },
+    {
+      "id": "student",
+      "name": "Byte the Student",
+      "line": "The best way to learn is to build something, break it, figure out why, and build it better."
+    }
+  ],
   "projects": [
     {
       "id": "homelab",
-      "title": "The Home Server Homelab",
-      "type": "systems",
-      "category": "SYSTEMS / INFRASTRUCTURE",
-      "rank": "",
-      "status": "FIELD TESTED",
-      "art": "server",
-      "symbol": "▤",
-      "image": "",
-      "summary": "A personal homelab for storage, containerized services, game servers, and local LLM experimentation.",
-      "details": "An evolving, hands-on environment for learning systems administration. My projects include Proxmox, Debian-based NAS storage, Docker containers, Jellyfin, self-hosted game servers, and LLM experimentation. I use the homelab to practice deployment, troubleshooting, and maintaining services.",
+      "title": "Home Server Homelab",
+      "category": "Systems",
+      "status": "In progress",
+      "summary": "A practical home laboratory for storage, containers, media, and game servers.",
+      "description": "An evolving Proxmox-based homelab with Debian network-attached storage, Docker containers, Jellyfin, dedicated game servers, and local LLM experiments. A place to practice deployment, troubleshooting, networking, and Linux administration.",
       "tools": [
         "Proxmox",
         "Debian",
         "Docker",
         "Jellyfin",
-        "Networking",
-        "LLM"
+        "Networking"
       ],
-      "link": "",
-      "questState": "available"
-    },
-    {
-      "id": "grappling-hook",
-      "title": "Unity Grappling Hook",
-      "type": "development",
-      "category": "GAME DEVELOPMENT / SAMPLE",
-      "rank": "",
-      "status": "CONCEPT ENTRY",
-      "art": "hook",
-      "symbol": "⚒",
-      "image": "",
-      "summary": "A sample project entry for a flexible C# grappling mechanic in Unity.",
-      "details": "This is a clearly marked example entry, not a claim of a finished project. Replace it with your own Unity implementation, describe the physics and controls, and add a link to code or gameplay footage. A strong write-up explains the challenge, your approach, and the outcome.",
-      "tools": [
-        "Unity",
-        "C#",
-        "Gameplay Systems"
-      ],
-      "link": "",
-      "questState": "available"
+      "url": "",
+      "image": ""
     },
     {
       "id": "portfolio",
-      "title": "Portfolio Website",
-      "type": "development",
-      "category": "FRONTEND / WEB DEVELOPMENT",
-      "rank": "",
-      "status": "CURRENT BUILD",
-      "art": "web",
-      "symbol": "✦",
-      "image": "",
-      "summary": "This website: an interactive fantasy field journal built with plain HTML, CSS, and JavaScript.",
-      "details": "A responsive developer portfolio styled as an explorer's journal. It includes a book-opening introduction, paginated quest archive, animated field reports, an inspectable toolbox, and a browser-based content editor. A separate optional vector-art pack supports character, guild, and cartography illustrations without requiring a framework.",
+      "title": "Pixel Quest Portfolio",
+      "category": "Web development",
+      "status": "In progress",
+      "summary": "The interactive website you are exploring right now.",
+      "description": "A playful, tile-based portfolio built with HTML5 Canvas, CSS, and vanilla JavaScript. Features top-down movement, interactive buildings, NPC dialogue, and a visual content editor. This is an evolving personal project.",
       "tools": [
         "HTML",
         "CSS",
         "JavaScript",
-        "Responsive UI"
+        "Canvas"
       ],
-      "link": "https://github.com/BlasianMonk/Portfolio-Website",
-      "questState": "available"
+      "url": "",
+      "image": ""
     },
     {
-      "id": "workflow",
-      "title": "Development Guild Workflow",
-      "type": "systems",
-      "category": "DEV TOOLS / COLLABORATION",
-      "rank": "",
-      "status": "FIELD PRACTICE",
-      "art": "team",
-      "symbol": "⌘",
-      "image": "",
-      "summary": "Organizing code, tasks, documentation, and handoffs with integrated development tools.",
-      "details": "Experience using Bitbucket alongside Jira, Confluence, and Trello for source control, task tracking, documentation, and planning.",
+      "id": "grapple",
+      "title": "Unity Grappling Hook (Concept)",
+      "category": "Game development",
+      "status": "Concept",
+      "summary": "An example concept for a customizable grappling-hook mechanic.",
+      "description": "An idea for a flexible C# grappling system in Unity. This entry is intentionally labeled as a concept, not a claimed finished release. Replace it with screenshots and technical notes when you've built your version.",
       "tools": [
+        "Unity",
+        "C#",
+        "Gameplay systems"
+      ],
+      "url": "",
+      "image": ""
+    },
+    {
+      "id": "sine",
+      "title": "SinE Game Studios LLC",
+      "category": "Indie development",
+      "status": "In progress",
+      "summary": "Independent game development, coordination, design, and testing.",
+      "description": "Founder since 2021, responsible for programming, artistic design, project management, testing, and product development on independent game projects. Uses Bitbucket alongside Jira, Confluence, and Trello for organizing work.",
+      "tools": [
+        "Game development",
+        "Bitbucket",
+        "Jira",
+        "Trello"
+      ],
+      "url": "",
+      "image": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder",
+      "company": "SinE Game Studios",
+      "dates": "2021 – Present",
+      "details": "Lead programming, art/design decisions, testing, project management, and day-to-day development of independent game projects. Coordinate work using Bitbucket, Jira, Confluence, and Trello."
+    },
+    {
+      "role": "Associate Software Engineer Intern",
+      "company": "Demiurge Studios",
+      "dates": "2018",
+      "details": "Developed and tested software systems, collaborated with artists and designers on game features, and helped troubleshoot live-server operations."
+    },
+    {
+      "role": "Junior Developer",
+      "company": "University of Massachusetts Amherst",
+      "dates": "2017 – 2018",
+      "details": "Integrated software with production hardware, tested and maintained code, and collaborated across departments. Used Bitbucket with Jira, Confluence, and Trello."
+    },
+    {
+      "role": "IT Technician",
+      "company": "Link To VR",
+      "dates": "2022",
+      "details": "Installed, maintained, and repaired computers, VR headsets, servers, and related software."
+    },
+    {
+      "role": "CNC Machinist / Operator",
+      "company": "Industrial manufacturing",
+      "dates": "2022 – Present (résumé listing)",
+      "details": "Operated, troubleshot, and maintained precision CNC equipment and edited programs using engineering drawings, blueprints, and G/M code."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "items": [
+        "C",
+        "C++",
+        "C#",
+        "Python",
+        "Java",
+        "JavaScript",
+        "SQL",
+        "Lua",
+        "PHP",
+        "HTML",
+        "Ruby",
+        "CSS",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Engines & Development",
+      "items": [
+        "Unity",
+        "Unreal Engine",
         "Bitbucket",
         "Jira",
         "Confluence",
-        "Trello"
-      ],
-      "link": "",
-      "questState": "available"
+        "Trello",
+        "Debugging",
+        "Testing"
+      ]
+    },
+    {
+      "name": "Systems & Networking",
+      "items": [
+        "Linux",
+        "Debian",
+        "Proxmox",
+        "Docker",
+        "Jellyfin",
+        "NAS",
+        "Azure",
+        "TCP/IP",
+        "DNS",
+        "SSH",
+        "Windows"
+      ]
     }
   ],
-  "accentColor": "#fa4ba9",
-  "secondaryColor": "#4de3e9",
-  "matrixIntroDuration": "3000"
+  "education": [
+    {
+      "title": "B.S. Computer Science",
+      "institution": "Western Governors University",
+      "date": "In progress",
+      "details": "Continuing undergraduate computer science studies."
+    },
+    {
+      "title": "Computer Science Studies",
+      "institution": "Greenfield Community College",
+      "date": "2018 – 2022",
+      "details": "Prior coursework and study in computer science."
+    }
+  ],
+  "certifications": [
+    "Google IT Certification",
+    "Microsoft Azure Network Engineer Associate",
+    "CompTIA A+",
+    "CompTIA Network+",
+    "CompTIA Security+"
+  ],
+  "worldNote": "This is an original, retro-RPG-inspired portfolio. Artwork is drawn in JavaScript—no external game assets or build system needed."
 };
