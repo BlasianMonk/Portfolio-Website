@@ -16,7 +16,7 @@ window.PORTFOLIO_DATA = {
   "player": {
     "shirt": "#e85e69",
     "hair": "#372c3e",
-    "skin": "#eac39b",
+    "skin": "#87694a",
     "pants": "#323d60"
   },
   "colors": {
@@ -175,6 +175,12 @@ window.PORTFOLIO_DATA = {
       "company": "Industrial manufacturing",
       "dates": "2022 – Present (résumé listing)",
       "details": "Operated, troubleshot, and maintained precision CNC equipment and edited programs using engineering drawings, blueprints, and G/M code."
+    },
+    {
+      "role": "Parkour/Gymnastics Instructor",
+      "company": "Hampshire Gymnastics School",
+      "dates": "2016 - 2020",
+      "details": "Responsible for planning a fun, engaging, and safe environment for children and teens.\nCovered the basics of parkour such as rolls, vaults, precisions, and cats, as well as free running tricks, flips, and bar work.\nDemonstrate exceptional leadership skills when teaching a class of 10+ kids/teens alone."
     }
   ],
   "skills": [
