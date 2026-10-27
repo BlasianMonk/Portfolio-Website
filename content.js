@@ -2,12 +2,12 @@
 window.PORTFOLIO_DATA = {
   "siteName": "DANTE'S WORLD",
   "welcomeTitle": "A NEW ADVENTURE AWAITS!",
-  "welcomeText": "Explore a pixel village and discover my projects, code, career, and favorite experiments. Every building has a story.",
-  "tagline": "SOFTWARE DEVELOPER / GAME MAKER / SYSTEMS TINKERER",
+  "welcomeText": "Explore a pixel village to discover my full-stack apps, multiplayer projects, code, game-development work, and homelab experiments. Every building has a story.",
+  "tagline": "FULL-STACK DEVELOPER / GAME MAKER / SYSTEMS TINKERER",
   "name": "Dante Sin",
-  "role": "Software Engineer · Game Developer · Tech Enthusiast",
-  "about": "I'm a developer who loves creating playful experiences and solving real-world problems. My work spans independent game development, software engineering, and hands-on infrastructure. I enjoy learning by building—and sharing what I learn along the way.",
-  "funFact": "Some of my favorite side quests happen in a homelab running Proxmox, Debian, Docker, Jellyfin, and self-hosted game servers.",
+  "role": "Software Engineer · Full-Stack Developer · Game Developer",
+  "about": "I build full-stack web apps, real-time multiplayer experiences, game projects, and self-hosted infrastructure. My work includes PostgreSQL-backed authentication and persistence, Node.js/Socket.IO apps, game development, and practical Linux/DevOps projects. I enjoy making technology interactive, approachable, and fun.",
+  "funFact": "My homelab uses Proxmox, Debian, Docker, NAS storage, VPNs, local LLMs, Jellyfin, and multiplayer game servers.",
   "currentQuest": "Pursuing a B.S. in Computer Science at Western Governors University.",
   "email": "dantesin100@gmail.com",
   "linkedin": "https://www.linkedin.com/in/dante-sin-1a2179161",
@@ -80,6 +80,60 @@ window.PORTFOLIO_DATA = {
     }
   ],
   "projects": [
+    {
+      "id": "reeltogether",
+      "title": "ReelTogether — Full-Stack Watch Parties",
+      "category": "Full-stack development",
+      "status": "Completed",
+      "summary": "A self-hosted streaming and synchronized watch-party platform with PostgreSQL persistence.",
+      "description": "Built a Node.js and Express streaming application with HTTP byte-range MP4 playback, Socket.IO synchronized host-controlled seeking/playback, room invitations, and live chat. Added PostgreSQL-backed user accounts with password hashing and persistent sessions, watch history, and saved room settings. Each participant controls their own audio volume. Local full-stack project; public production deployment and hardening are separate work.",
+      "tools": [
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "Socket.IO",
+        "PostgreSQL",
+        "HTML",
+        "CSS"
+      ],
+      "url": "",
+      "image": ""
+    },
+    {
+      "id": "pixel-tavern",
+      "title": "Pixel Tavern — Multiplayer Chat",
+      "category": "Full-stack development",
+      "status": "Completed",
+      "summary": "A retro pixel-art multiplayer space with live chat and synchronized movement.",
+      "description": "Developed a Node.js, Express, and Socket.IO multiplayer web app with real-time chat, connected-player presence, synchronized character movement, and interactive pixel-art environments rendered in the browser.",
+      "tools": [
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "Socket.IO",
+        "Canvas",
+        "CSS"
+      ],
+      "url": "",
+      "image": ""
+    },
+    {
+      "id": "github-actions-cicd",
+      "title": "GitHub Actions CI/CD Pipeline",
+      "category": "DevOps & automation",
+      "status": "Completed",
+      "summary": "Automated code checks, tests, audits, builds, and GitHub Pages deployment.",
+      "description": "Configured a GitHub Actions workflow for a JavaScript/Node.js portfolio project, covering syntax checks, unit testing, dependency security auditing, build steps, and automated GitHub Pages deployment.",
+      "tools": [
+        "GitHub Actions",
+        "JavaScript",
+        "Node.js",
+        "GitHub Pages",
+        "CI/CD"
+      ],
+      "url": "",
+      "image": ""
+    },
     {
       "id": "homelab",
       "title": "Home Server Homelab",
@@ -212,7 +266,12 @@ window.PORTFOLIO_DATA = {
         "Confluence",
         "Trello",
         "Debugging",
-        "Testing"
+        "Testing",
+        "Node.js",
+        "Express.js",
+        "Socket.IO",
+        "GitHub Actions",
+        "REST APIs"
       ]
     },
     {
@@ -228,7 +287,11 @@ window.PORTFOLIO_DATA = {
         "TCP/IP",
         "DNS",
         "SSH",
-        "Windows"
+        "Windows",
+        "PostgreSQL",
+        "SQL databases",
+        "VPN",
+        "GitHub Pages"
       ]
     }
   ],
